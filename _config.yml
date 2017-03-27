@@ -8,6 +8,7 @@ menu:
   About: /about
   Contact: /contact
   Archives: /archives
+  Photo: /photo
 
 # Miscelaneous
 favicon: /favicon.ico
@@ -18,4 +19,7 @@ stylesheets:
 
 # scripts loaded in the end of the body
 scripts:
+- http://code.jquery.com/jquery.min.js
+- /js/jquery.rotate.min.js
 - /js/Vateral.js
+

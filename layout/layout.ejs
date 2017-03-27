@@ -1,4 +1,3 @@
-
 <%
 var pageTitle = page.title || config.subtitle || '';
 if (is_archive()) pageTitle = 'Archives';
@@ -20,15 +19,17 @@ pageTitle += config.title ;
       <link rel="stylesheet" href="<%=url%>">
     <% }); %>
   <% } %>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
-
+<div class="background"></div>
+<div class="nav-btn"><img src="images/list.png "  ondragstart="return false;"></div>
 <div id="menu-outer">
   <div id="menu-inner">
+      <ul>
     <% Object.keys(theme.menu).forEach(function(key) { %>
-      <a href="<%=theme.menu[key]%>"><%=key%></a>
+      <a href="<%=theme.menu[key]%>"><li><%=key%></li></a>
     <% }); %>
+      </ul>
   </div>
 </div>
 
@@ -40,6 +41,7 @@ pageTitle += config.title ;
 
 <div id="bottom-outer">
   <div id="bottom-inner">
+      <a href="#nav" id="top-button" onfocus="this.blur();"><div class="up"><img src="images/top.png" ondragstart="return false;"></div></a>
       Copyright ©  2017  <%=config.title%>
     <!--<a href="<%=config.root%>">Home</a>-->
   </div>

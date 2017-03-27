@@ -3,6 +3,53 @@ body{
     padding: 0;
     background-color: #E9EBEC;
 }
+/*导航按钮*/
+.nav-btn{
+    width: 30px;
+    height:30px;
+    display: block;
+    top: 30px;
+    left: 30px;
+    z-index: 99;
+    position:fixed;
+    cursor: Pointer;
+}
+.nav-btn img{
+    width: 100%;
+}
+
+/*导航*/
+#menu-outer{
+    width: 300px;
+    height: 1000px;
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: -300px;
+}
+#menu-inner ul{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+
+/*黑色背景*/
+.background{
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: rgba(130, 130, 130, 0.71);
+    display: none;
+}
+
+/*内容*/
+#content-outer{
+    display: none;
+}
+/*footer*/
 #bottom-outer{
     width: 100%;
     height:80px;
@@ -20,9 +67,29 @@ body{
     margin: 0 auto;
     line-height: 80px;
     color: rgba(101, 101, 101, 0.58);
+    position: relative;
 }
 .fixed-bottom {
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+.up{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    right: 45px;
+    top:-45px;
+    padding: 5px;
+    background-color: rgba(134, 134, 134, 0.97);
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgba(199, 199, 199, 0.58);
+}
+.up img{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 75%;
 }
