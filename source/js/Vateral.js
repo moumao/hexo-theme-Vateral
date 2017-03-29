@@ -50,6 +50,9 @@ $(function () {
             $(".background").css({
                 "display":"block"
             });
+            $(".background").animate({
+                "opacity":"1"
+            },500);
             $(this).rotate({animateTo: 180});
             $(this).animate({
                 "left":"330px"
@@ -57,11 +60,31 @@ $(function () {
             $("body").css({
                 "overflow-y":"hidden"
             });
+            $("#menu-outer").css({
+                "overflow-y":"auto"
+            });
             return false;
         });
     }
     nanup()
 });
+
+$(function () {
+    function archives() {
+        $("#archives").click(function () {
+            var height=$(".nav-dropdown").css("display");
+            if(height=="none"){
+                $(".nav-dropdown").slideDown();
+                $(".dropdown-ico").rotate({animateTo: 180});
+            }else{
+                $(".nav-dropdown").slideUp()
+                $(".dropdown-ico").rotate({animateTo: 0});
+            }
+
+        })
+    }
+    archives()
+})
 
 //导航栏收起绑定事件
 $(function () {
@@ -73,13 +96,21 @@ $(function () {
             $("#bottom-outer").animate({
                 "left":0
             },500);
-            $(".background").css({
-                "display":"none"
-            });
+            $(".background").animate({
+                "opacity":"0"
+            },500);
+            setTimeout(function () {
+                $(".background").css({
+                    "display":"none"
+                });
+            },500);
             $(".nav-btn").animate({
                 "left":"30px"
             },500);
             $(".nav-btn").rotate({animateTo: 0});
+
+            $(".nav-dropdown").slideUp();
+            $(".dropdown-ico").rotate({animateTo: 0});
             /*$(".left-list-out ul li").slideUp();
             $(".left-list-down").rotate({animateTo: 0});*/
         });

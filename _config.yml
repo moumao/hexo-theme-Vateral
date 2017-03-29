@@ -13,6 +13,50 @@ menu:
 # Miscelaneous
 favicon: /favicon.ico
 
+# head-bg 头像背景图
+headbg: images/head-bg.jpg
+
+# header 头像图
+header: images/header.jpg
+
+#链接
+sns:
+    github: "https://github.com/moumao"
+    email: "https://1195358569@qq.com"
+    facebook:
+    weibo: "http://weibo.com/u/3168872804"
+    rss:
+    douban:
+
+sidebar:
+    homepage:
+        use: true
+        divider: false
+    archives:
+        use: true
+        divider: false
+    categories:
+        use: false
+        divider: false
+    about:
+        use: true
+        divider: false
+    tags:
+        use: true
+        divider: false
+    pages:
+        关于我:
+            link: "/about"
+            icon: person
+            divider: false
+        标签云:
+            link: "/tags"
+            icon: polymer
+            divider: false
+    article_num:
+        use: false
+        divider: false
+
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/Vateral.css
