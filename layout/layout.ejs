@@ -102,18 +102,20 @@ pageTitle += config.title ;
   </div>
 </div>
 
-<div id="content-outer">
-  <div id="content-inner">
-    <%- body %>
-  </div>
-</div>
+<div class="clothes" id="clothes">
+    <div id="content-outer">
+      <div id="content-inner">
+        <%- body %>
+      </div>
+    </div>
 
-<div id="bottom-outer">
-  <div id="bottom-inner">
-      <a href="#nav" id="top-button" onfocus="this.blur();"><div class="up"><img src="images/up.png" ondragstart="return false;"></div></a>
-      Copyright ©  2017  <%=config.title%><br>
-      Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
-  </div>
+    <div id="bottom-outer">
+      <div id="bottom-inner">
+          <a href="#clothes" id="top-button" onfocus="this.blur();"><div class="up"><img src="images/up.png" ondragstart="return false;"></div></a>
+          Copyright ©  2017  <%=config.title%><br>
+          Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
+      </div>
+    </div>
 </div>
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
   <!-- scripts list from theme config.yml -->
@@ -121,6 +123,11 @@ pageTitle += config.title ;
     <script src="<%=url%>"></script>
   <% }); %>
 <% } %>
+<script type="text/javascript">
 
+
+
+
+</script>
 </body>
 </html>

@@ -1,3 +1,63 @@
+(function () {
+    var weight=$("body").width();
+    if(weight<=768){
+        $(document).on("pagecreate","body",function(){
+            $("body").on("swiperight",function(){
+                $("#menu-outer").animate({
+                    "left":0
+                },500);
+                $(".clothes").animate({
+                    "left":"300px"
+                },500);
+                $(".background").css({
+                    "display":"block"
+                });
+                $(".background").animate({
+                    "opacity":"1"
+                },500);
+                $(".nav-btn").rotate({animateTo: 180});
+                $(".nav-btn").animate({
+                    "left":"330px"
+                },500);
+                $("body").css({
+                    "overflow-y":"hidden"
+                });
+                $("#menu-outer").css({
+                    "overflow-y":"auto"
+                });
+                //return false;
+            });
+            $("body").on("swipeleft",function(){
+                $("body").css({
+                    "overflow-y":"auto"
+                });
+                $("#menu-outer").animate({
+                    "left":"-300px"
+                },500);
+                $(".clothes").animate({
+                    "left":0
+                },500);
+                $(".background").animate({
+                    "opacity":"0"
+                },500);
+                setTimeout(function () {
+                    $(".background").css({
+                        "display":"none"
+                    });
+                },500);
+                $(".nav-btn").animate({
+                    "left":"30px"
+                },500);
+                $(".nav-btn").rotate({animateTo: 0});
+
+                $(".nav-dropdown").slideUp();
+                $(".dropdown-ico").rotate({animateTo: 0});
+            });
+        });
+    }
+})();
+
+
 $(function () {
     function pageready() {
         //禁止x轴滚动条
@@ -38,13 +98,18 @@ $(function () {
 });
 
 //导航栏弹出绑定事件
-$(function () {
-    function nanup() {
+(function () {
         $(".nav-btn").click(function () {
+            $("body").css({
+                "overflow-y":"hidden"
+            });
             $("#menu-outer").animate({
                 "left":0
             },500);
-            $("#bottom-outer").animate({
+            $("#menu-outer").css({
+                "overflow-y":"auto"
+            });
+            $(".clothes").animate({
                 "left":"300px"
             },500);
             $(".background").css({
@@ -53,21 +118,12 @@ $(function () {
             $(".background").animate({
                 "opacity":"1"
             },500);
-            $(this).rotate({animateTo: 180});
+            $(this).rotate({animateTo: 180},200);
             $(this).animate({
                 "left":"330px"
             },500);
-            $("body").css({
-                "overflow-y":"hidden"
-            });
-            $("#menu-outer").css({
-                "overflow-y":"auto"
-            });
-            return false;
         });
-    }
-    nanup()
-});
+})();
 
 $(function () {
     function archives() {
@@ -77,23 +133,26 @@ $(function () {
                 $(".nav-dropdown").slideDown();
                 $(".dropdown-ico").rotate({animateTo: 180});
             }else{
-                $(".nav-dropdown").slideUp()
+                $(".nav-dropdown").slideUp();
                 $(".dropdown-ico").rotate({animateTo: 0});
             }
 
         })
     }
     archives()
-})
+});
 
 //导航栏收起绑定事件
-$(function () {
-    function navdown() {
+(function () {
+    //function navdown() {
         $(".background").click(function () {
+            $("body").css({
+                "overflow-y":"auto"
+            });
             $("#menu-outer").animate({
                 "left":"-300px"
             },500);
-            $("#bottom-outer").animate({
+            $(".clothes").animate({
                 "left":0
             },500);
             $(".background").animate({
@@ -111,14 +170,24 @@ $(function () {
 
             $(".nav-dropdown").slideUp();
             $(".dropdown-ico").rotate({animateTo: 0});
-            /*$(".left-list-out ul li").slideUp();
-            $(".left-list-down").rotate({animateTo: 0});*/
+            //return false;
+        });
+    //}
+    //navdown();
+})();
+
+//回到顶部
+$(function () {
+    function top() {
+        $("#top-button").click(function () {
+            $('html,body').animate({
+                scrollTop:$($.attr(this,'href')).offset().top
+            },500);
+            return false;
         });
     }
-    navdown();
+    top()
 });
-
-
 
 //foot固定在底部
 $(function(){
