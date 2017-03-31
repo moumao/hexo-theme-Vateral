@@ -22,9 +22,16 @@ pageTitle += config.title ;
   <% } %>
 </head>
 <body>
-<div class="background"></div>
-<div class="nav-btn"><img src="images/list.png "  ondragstart="return false;"></div>
-<a href="#" data-activates="slide-out" class="button-collapse"></a>
+<div class="progress" id="top">
+    <div class="indeterminate" style="width:0%"></div>
+</div>
+<script type="text/javascript">
+    $('.progress').animate({'width':'10%'},50);
+    //第一个进度节点
+</script>
+
+<a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="images/list.png "  ondragstart="return false;"></div></a>
+
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
@@ -58,6 +65,7 @@ pageTitle += config.title ;
                   <% } %>
               </div>
           </div>
+
           <!-- Homepage -->
           <% if(theme.sidebar.homepage.use === true) { %>
           <li class="nav-list">
@@ -83,131 +91,6 @@ pageTitle += config.title ;
                       separator: '</li><li class="nav-dropdown-list">'
                   }) %>
               </li>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
-              <!--&lt;!&ndash; about &ndash;&gt;-->
-              <% if(theme.sidebar.about.use === true) { %>
-              <li class="nav-list">
-                  <a href="<%= config.root %>" target="_self">
-                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
-                  </a>
-              </li>
-              <% } %>
           </ul>
 
           <!--&lt;!&ndash; tags &ndash;&gt;-->
@@ -227,50 +110,41 @@ pageTitle += config.title ;
               </a>
           </li>
           <% } %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       </ul>
   </div>
 </div>
+<script type="text/javascript">
+    $('.progress').animate({'width':'40%'},50);
+    //第二个进度节点
+</script>
 
-<div class="clothes" id="clothes">
-    <div id="content-outer">
-      <div id="content-inner">
-        <%- body %>
-      </div>
-    </div>
-
-    <div id="bottom-outer">
-      <div id="bottom-inner">
-          <a href="#clothes" id="top-button" onfocus="this.blur();"><div class="up"><img src="images/up.png" ondragstart="return false;"></div></a>
-          Copyright ©  2017  <%=config.title%><br>
-          Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
-      </div>
-    </div>
+<div id="content-outer">
+  <div id="content-inner">
+    <%- body %>
+  </div>
 </div>
+<script type="text/javascript">
+    $('.progress').animate({'width':'80%'},50);
+    //第三个进度节点
+</script>
+
+<div id="bottom-outer">
+  <div id="bottom-inner">
+      <a  id="top-button" onfocus="this.blur();"><div class="up"><img src="images/up.png" ondragstart="return false;"></div></a>
+      Copyright ©  2017  <%=config.title%><br>
+      Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
+  </div>
+</div>
+<script type="text/javascript">
+    $('.progress').animate({'width':'100%'},50);
+    //第四个进度节点
+</script>
+
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
   <!-- scripts list from theme config.yml -->
   <% theme.scripts.forEach(function(url) { %>
     <script src="<%=url%>"></script>
   <% }); %>
 <% } %>
-<script type="text/javascript">
-
-
-
-
-</script>
 </body>
 </html>

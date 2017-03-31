@@ -12,6 +12,10 @@ body{
     height: auto;
     padding: 0;
 }
+.progress{
+    margin: 0;
+    background-color: white;
+}
 /*导航按钮*/
 .nav-btn{
     width: 30px;
@@ -215,18 +219,16 @@ body{
     right: 45px;
     top:20px;
     padding: 5px;
+    cursor: Pointer;
 }
 .up img{
-   width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 /*文章列表*/
-.clothes{
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top:0;
-}
 #recent-posts{
     width: 952px;
     display: block;
@@ -237,6 +239,16 @@ body{
     height: 300px;
     background-color: white;
     display: block;
+    margin-top: 100px;
+    transition: height .5s;
+    box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
+}
+.post-header{
+    width: 952px;
+    height: 450px;
+    background-color: white;
+    display: block;
+    margin: 0 auto;
     margin-top: 100px;
     transition: height .5s;
     box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
