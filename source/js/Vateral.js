@@ -58,47 +58,20 @@
 })();
 
 
-$(function () {
-    function pageready() {
+(function () {
         //禁止x轴滚动条
         $("body").css({
             "overflow-x":"hidden"
         });
-
-        //滚动条滚动时获取左侧导航栏以及背景的top
-        $(window).scroll(function () {
-            var top=$(window).scrollTop();
-            $("#menu-outer").css({
-                "top":top
-            });
-            $(".background").css({
-             "top":top
-             });
-        });
-
-        //动态获取整个页面高度，设置给导航栏和背景
         var height=$(window).height();
-        $(window).resize(function () {
-            var height=$(window).height();
-            $("#menu-outer").css({
-                "height":height
-            });
-             $(".background").css({
-             "height":height
-             });
-        });
-        $("#menu-outer").css({
+
+        $(".background").css({
             "height":height
-        });
-         $(".background").css({
-         "height":height
-         });
-    }
-    pageready()
-});
+        })
+})();
 
 //导航栏弹出绑定事件
-(function () {
+/*(function () {
         $(".nav-btn").click(function () {
             $("body").css({
                 "overflow-y":"hidden"
@@ -123,17 +96,31 @@ $(function () {
                 "left":"330px"
             },500);
         });
+})();*/
+(function () {
+    $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 240
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        }
+    );
+    $(".nav-btn").click(function () {
+        $('.button-collapse').sideNav("show");
+
+    })
 })();
+
 
 $(function () {
     function archives() {
         $("#archives").click(function () {
-            var height=$(".nav-dropdown").css("display");
+            var height=$("#dropdown").css("display");
             if(height=="none"){
-                $(".nav-dropdown").slideDown();
+                $("#dropdown").slideDown();
                 $(".dropdown-ico").rotate({animateTo: 180});
             }else{
-                $(".nav-dropdown").slideUp();
+                $("#dropdown").slideUp();
                 $(".dropdown-ico").rotate({animateTo: 0});
             }
 
@@ -143,15 +130,12 @@ $(function () {
 });
 
 //导航栏收起绑定事件
-(function () {
-    //function navdown() {
+/*(function () {
         $(".background").click(function () {
+            $('.button-collapse').sideNav("hide");
             $("body").css({
                 "overflow-y":"auto"
             });
-            $("#menu-outer").animate({
-                "left":"-300px"
-            },500);
             $(".clothes").animate({
                 "left":0
             },500);
@@ -172,9 +156,7 @@ $(function () {
             $(".dropdown-ico").rotate({animateTo: 0});
             //return false;
         });
-    //}
-    //navdown();
-})();
+})();*/
 
 //回到顶部
 $(function () {

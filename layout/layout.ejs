@@ -24,57 +24,58 @@ pageTitle += config.title ;
 <body>
 <div class="background"></div>
 <div class="nav-btn"><img src="images/list.png "  ondragstart="return false;"></div>
+<a href="#" data-activates="slide-out" class="button-collapse"></a>
 <div id="menu-outer">
   <div id="menu-inner">
-      <div class="nav-header">
-          <img id="headbg" src="<%=theme.headbg%>" ondragstart="return false;">
-          <div class="header-box"><img src="<%=theme.header%>" ondragstart="return false;"></div>
-          <p><%=config.author%></p>
-          <div class="nav-link">
-              <% if(theme.sns.github) { %>
-                    <div class="link-box"><a href="<%= theme.sns.github %>" target="_blank"><img src="images/link/github.png" ondragstart="return false;"></a> </div>
-              <% } %>
+      <ul id="slide-out" class="side-nav">
+          <div class="nav-header">
+              <img id="headbg" src="<%=theme.headbg%>" ondragstart="return false;">
+              <div class="header-box"><img src="<%=theme.header%>" ondragstart="return false;"></div>
+              <p><%=config.author%></p>
+              <div class="nav-link">
+                  <% if(theme.sns.github) { %>
+                  <div class="link-box"><a href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="images/link/github.png" ondragstart="return false;"></div></a></div>
+                  <% } %>
 
-              <% if(theme.sns.email) { %>
-              <div class="link-box"><a href="<%= theme.sns.email %>" target="_blank"><img src="images/link/email.png" ondragstart="return false;"></a> </div>
-              <% } %>
+                  <% if(theme.sns.email) { %>
+                  <div class="link-box"><a href="<%= theme.sns.email %>" target="_blank"><div class="link-box-img"><img src="images/link/email.png" ondragstart="return false;"> </div></a></div>
+                  <% } %>
 
-              <% if(theme.sns.facebook) { %>
-              <div class="link-box"><a href="<%= theme.sns.facebook %>" target="_blank"><img src="images/link/facebook.png" ondragstart="return false;"></a> </div>
-              <% } %>
+                  <% if(theme.sns.facebook) { %>
+                  <div class="link-box"><a href="<%= theme.sns.facebook %>" target="_blank"><div class="link-box-img"><img src="images/link/facebook.png" ondragstart="return false;"> </div></a></div>
+                  <% } %>
 
-              <% if(theme.sns.weibo) { %>
-              <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><img src="images/link/weibo.png" ondragstart="return false;"></a> </div>
-              <% } %>
+                  <% if(theme.sns.weibo) { %>
+                  <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box-img"><img src="images/link/weibo.png" ondragstart="return false;"></div></a></div>
+                  <% } %>
 
-              <% if(theme.sns.rss) { %>
-              <div class="link-box"><a href="<%= theme.sns.rss %>" target="_blank"><img src="images/link/rss.png" ondragstart="return false;"></a> </div>
-              <% } %>
+                  <% if(theme.sns.rss) { %>
+                  <div class="link-box"><a href="<%= theme.sns.rss %>" target="_blank"><div class="link-box-img"><img src="images/link/rss.png" ondragstart="return false;"> </div></a></div>
+                  <% } %>
 
-              <% if(theme.sns.douban) { %>
-              <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"><img src="images/link/douban.png" ondragstart="return false;"></a> </div>
-              <% } %>
+                  <% if(theme.sns.douban) { %>
+                  <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="images/link/douban.png" ondragstart="return false;"> </div></a></div>
+                  <% } %>
+              </div>
           </div>
-      </div>
-      <ul>
-    <!--<% Object.keys(theme.menu).forEach(function(key) { %>
-      <a href="<%=theme.menu[key]%>" class="nav-list"><li><%=key%></li></a>
-    <% }); %>-->
-
           <!-- Homepage -->
           <% if(theme.sidebar.homepage.use === true) { %>
-              <a href="<%= config.root %>" class="nav-list" target="_self">
-                  <li><div class="nav-ico"><img src="images/ico/home.png"> </div><p>主页</p></li>
+          <li class="nav-list">
+              <a href="<%= config.root %>" target="_self">
+                  <div class="nav-ico"><img src="images/ico/home.png"> </div><p>主页</p>
               </a>
+          </li>
           <% } %>
 
-          <!-- archives -->
+          <!--&lt;!&ndash; archives &ndash;&gt;-->
           <% if(theme.sidebar.archives.use === true) { %>
-          <a href="#" id="archives" class="nav-list" target="_self">
-              <li><div class="nav-ico"><img src="images/ico/archives.png"></div><p>归档</p><div class="dropdown-ico"><img src="images/ico/smalldown.png"></div></li>
-          </a>
+          <li class="nav-list">
+              <a  href="#" id="archives"  target="_self">
+                  <div class="nav-ico"><img src="images/ico/archives.png"></div><p>归档</p><div class="dropdown-ico"><img src="images/ico/smalldown.png"></div>
+              </a>
+          </li>
           <% } %>
-          <ul class="nav-dropdown">
+          <ul class="dropdown-menu" id="dropdown">
               <li class="nav-dropdown-list">
                   <%- list_archives({
                       show_count: true,
@@ -82,21 +83,163 @@ pageTitle += config.title ;
                       separator: '</li><li class="nav-dropdown-list">'
                   }) %>
               </li>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %><!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
+              <!--&lt;!&ndash; about &ndash;&gt;-->
+              <% if(theme.sidebar.about.use === true) { %>
+              <li class="nav-list">
+                  <a href="<%= config.root %>" target="_self">
+                      <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+                  </a>
+              </li>
+              <% } %>
           </ul>
 
-          <!-- tags -->
+          <!--&lt;!&ndash; tags &ndash;&gt;-->
           <% if(theme.sidebar.tags.use === true) { %>
-          <a href="/about" class="nav-list" target="_self">
-              <li><div class="nav-ico"><img src="images/ico/tags.png"> </div><p>标签</p></li>
-          </a>
+          <li class="nav-list">
+              <a href="<%= config.root %>" target="_self">
+                  <div class="nav-ico"><img src="images/ico/tags.png"> </div><p>标签</p>
+              </a>
+          </li>
           <% } %>
 
-          <!-- about -->
+          <!--&lt;!&ndash; about &ndash;&gt;-->
           <% if(theme.sidebar.about.use === true) { %>
-          <a href="/about" class="nav-list" target="_self">
-              <li><div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于我</p></li>
-          </a>
+          <li class="nav-list">
+              <a href="<%= config.root %>" target="_self">
+                  <div class="nav-ico"><img src="images/ico/about.png"> </div><p>关于</p>
+              </a>
+          </li>
           <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       </ul>
   </div>
