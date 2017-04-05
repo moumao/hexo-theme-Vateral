@@ -11,13 +11,13 @@ menu:
   Photo: /photo
 
 # Miscelaneous
-favicon: /favicon.ico
+favicon: /source/favicon.ico
 
 # head-bg 头像背景图
-headbg: images/head-bg.jpg
+headbg: /images/head-bg.jpg
 
 # header 头像图
-header: images/header.jpg
+header: /images/header.jpg
 
 #链接
 sns:
@@ -59,16 +59,16 @@ sidebar:
 
 # stylesheets loaded in the <head>
 stylesheets:
-
 - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css
 - /css/Vateral.css
 
 
 # scripts loaded in the end of the body
 scripts:
+
 - https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js
-- https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js
 - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js
 - /js/jquery.rotate.min.js
 - /js/Vateral.js
+
 

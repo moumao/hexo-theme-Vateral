@@ -1,16 +1,15 @@
-<div class="post-header"></div>
-<% if (site.posts.length > 0) { %>
-  <div id="recent-posts">
-    <!--<h1>Recent Posts</h1>-->
-    <% site.posts.sort('date', -1).limit(10).each(function(post) { %>
-      <div class="recent-post-item">
-        <a href="<%=config.root + post.path%>"><%=post.title%></a>
-        <% if (post.date) { %>
-          <time datetime="<%=post.date.toJSON()%>">
-            <%=date(post.date)%>
-          </time>
-        <% } %>
-      </div>
-    <% }); %>
-  </div>
-<% } %>
+<!--<div class="post-header"></div>-->
+<div id="recent-posts">
+  <!--<h1>Recent Posts</h1>-->
+  <% page.posts.each(function(post) { %>
+    <div class="recent-post-item">
+      <a href="<%=config.root + post.path%>"><%=post.title%></a>
+     <!-- <% if (post.date) { %>
+        <time datetime="<%=post.date.toJSON()%>">
+          <%=date(post.date)%>
+        </time>-->
+      <% } %>
+    </div>
+  <% }); %>
+</div>
+
