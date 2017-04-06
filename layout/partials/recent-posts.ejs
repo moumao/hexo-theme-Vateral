@@ -1,14 +1,28 @@
-<!--<div class="post-header"></div>-->
 <div id="recent-posts">
   <!--<h1>Recent Posts</h1>-->
   <% page.posts.each(function(post) { %>
     <div class="recent-post-item">
       <a href="<%=config.root + post.path%>"><%=post.title%></a>
-     <!-- <% if (post.date) { %>
-        <time datetime="<%=post.date.toJSON()%>">
+      <% if (post.date) { %>
+        <p><time datetime="<%=post.date.toJSON()%>">
           <%=date(post.date)%>
-        </time>-->
+        </time>
+        </p>
       <% } %>
+      <p>
+          <%- list_tags(post.tags, {
+            show_count: false,
+            style: 'list',
+            separator: ''
+          }) %>
+      </p>
+      <p class="post_entry-excerpt">
+          <%if(post.excerpt) {%>
+            <%- strip_html(post.excerpt) %>
+          <%}else{%>
+            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+          <%}%>
+      </p>
     </div>
   <% }); %>
 </div>

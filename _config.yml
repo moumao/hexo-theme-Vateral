@@ -19,6 +19,13 @@ headbg: /images/head-bg.jpg
 # header 头像图
 header: /images/header.jpg
 
+# post-header
+post_header:
+  img: /images/coverpic.jpg
+  about:
+    - "腹有诗书气自华"
+  url: "http://www.moumaobuchiyu.com"
+
 #链接
 sns:
     github: "https://github.com/moumao"
@@ -28,6 +35,7 @@ sns:
     rss:
     douban:
 
+#nav
 sidebar:
     homepage:
         use: true
@@ -57,18 +65,20 @@ sidebar:
         use: false
         divider: false
 
+# Reading experience
+reading:
+    entry_excerpt: 100
+
 # stylesheets loaded in the <head>
 stylesheets:
-- https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css
-- /css/Vateral.css
-
+  - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css
+  - /css/Vateral.css
 
 # scripts loaded in the end of the body
 scripts:
-
-- https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js
-- https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js
-- /js/jquery.rotate.min.js
-- /js/Vateral.js
+  - https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js
+  - /js/jquery.rotate.min.js
+  - /js/Vateral.js
 
 

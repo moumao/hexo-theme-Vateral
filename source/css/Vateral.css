@@ -123,7 +123,7 @@ body{
     position: absolute;
     background-color: white;
     left:110px ;
-    top: 20%;
+    top: 14%;
     overflow: hidden;
 }
 .header-box img{
@@ -135,7 +135,7 @@ body{
     text-align: center;
     display: block;
     position: absolute;
-    top: 20%;
+    top: 14%;
     margin-top: 100px;
     color: white;
 }
@@ -144,7 +144,7 @@ body{
     height:60px;
     position: absolute;
     left: 0;
-    top: 20%;
+    top: 14%;
     margin: 0 auto;
     margin-top: 150px;
     text-align: center;
@@ -165,19 +165,105 @@ body{
 .link-box-img img{
     width: 100%;
 }
-/*灰色透明背景*/
-.background{
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 999;
+
+.nav-search{
     width: 100%;
-    background-color: rgba(33, 0, 16, 0.71);
-    display: none;
-    opacity: 0;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+    transition: background-color .5s;
+    cursor: Pointer;
+    background-color: rgba(61, 61, 61, 0.23);
+    z-index: 99;
+}
+.nav-search input{
+    width: 96.5%;
+    color: white;
+    padding-left: 10px;
+    border-bottom: 0;
+    z-index: 100;
+}
+.nav-search form{
+    height: 45px;
+}
+.nav-search-img{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+    right: 0;
+    bottom: 0;
+    z-index: 111;
+}
+.nav-search-img img{
+    width: 100%;
+}
+.nav-search:hover{
+    background-color: rgba(61, 61, 61, 0.5);
+}
+/*搜索结果区*/
+#local-search-result {
+    width: 100%;
+    font-size: 0.9em;
+    text-align: left;
+    word-break: break-all;
+    background-color: white;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
+#local-search-result ul.search-result-list li:hover {
+}
 
+/*单条搜索结果*/
+#local-search-result li {
+    width:100%;
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(133, 133, 133, 0.89);
+}
+#local-search-result .search-result-list li:hover {
+
+}
+
+/*匹配的标题*/
+#local-search-result a.search-result-title {
+    width: 100%;
+    height: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*搜索预览段落*/
+#local-search-result p.search-result {
+    text-align: left;
+    width: 100%;
+    line-height: 40px;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    color: black;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*匹配的关键词*/
+#local-search-result em.search-keyword {
+    color: #f58e90;
+}
+/*无匹配搜索结果时显示*/
+p.no-result {
+    display: none;
+    text-align: center;
+    color: #808080;
+    background-color: white;
+    line-height: 45px;
+    margin: 45px 0 0 0 ;
+    font-family: font-serif serif;
+}
 /*footer*/
 #bottom-outer{
     width: 100%;
@@ -239,25 +325,54 @@ body{
     height: 300px;
     background-color: white;
     display: block;
-    margin-top: 100px;
+    margin-top: 80px;
     transition: height .5s;
     box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
 }
 .post-header{
     width: 952px;
-    height: 450px;
+    height: 400px;
     background-color: white;
     display: block;
     margin: 0 auto;
     margin-top: 100px;
-    transition: height .5s;
+    transition: all.5s;
     box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    text-align: center;
+    position: relative;
+    overflow: auto;
+}
+.post-header-title{
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    position: absolute;
+    bottom: 50px;
+
+}
+
+.post-header-title p{
+    width: 100%;
+    height: 40px;
+    color: white;
+    display: block;
+    margin: 0;
+    line-height: 40px;
+    font-size: 30px;
+    transition: margin-top .5s;
 }
 @media only screen and (max-width: 992px){
 
     #recent-posts{
         width: 96%;
-
+    }
+    .post-header{
+        width: 100%;
+        margin-top: 0;
+        transition: all .5s;
     }
 }
 @media only screen and (max-width: 768px){
@@ -277,8 +392,15 @@ body{
         width: 100%;
     }
     .recent-post-item{
-
+        margin-top: 30px;
         height: 250px;
 
+    }
+    .post-header{
+        height: 300px;
+        transition: all .5s;
+    }
+    .post-header p{
+        margin-top: 240px;
     }
 }

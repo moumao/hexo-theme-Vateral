@@ -22,14 +22,6 @@ pageTitle += config.title ;
   <% } %>
 </head>
 <body>
-<div class="progress" id="top">
-    <div class="indeterminate" style="width:0%"></div>
-</div>
-<script type="text/javascript">
-    //$('.progress').animate({'width':'10%'},50);
-    //第一个进度节点
-</script>
-
 <a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="/images/list.png "  ondragstart="return false;"></div></a>
 
 <div id="menu-outer">
@@ -64,6 +56,14 @@ pageTitle += config.title ;
                   <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="/images/link/douban.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
               </div>
+              <div class="nav-search">
+                  <form id="search-form"> <!-- 搜索框相关 -->
+                      <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+                      <div class="nav-search-img"><img src="/images/search.png"></div>
+                  </form>
+                  <div id="local-search-result"></div> <!-- 搜索结果区 -->
+                  <p class='no-result'>无搜索结果</p>
+              </div>
           </div>
 
           <!--Homepage-->
@@ -96,7 +96,7 @@ pageTitle += config.title ;
           <!--tags-->
           <% if(theme.sidebar.tags.use === true) { %>
           <li class="nav-list">
-              <a href="/tags" target="_self">
+              <a href="/tag" target="_self">
                   <div class="nav-ico"><img src="/images/ico/tags.png"> </div><p>标签</p>
               </a>
           </li>
@@ -113,21 +113,11 @@ pageTitle += config.title ;
       </ul>
   </div>
 </div>
-<script type="text/javascript">
-    //$('.progress').animate({'width':'40%'},50);
-    //第二个进度节点
-</script>
-
 <div id="content-outer">
   <div id="content-inner">
     <%- body %>
   </div>
 </div>
-<script type="text/javascript">
-    //$('.progress').animate({'width':'80%'},50);
-    //第三个进度节点
-</script>
-
 <div id="bottom-outer">
   <div id="bottom-inner">
       <a  id="top-button" onfocus="this.blur();"><div class="up"><img src="/images/up.png" ondragstart="return false;"></div></a>
@@ -135,11 +125,6 @@ pageTitle += config.title ;
       Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
   </div>
 </div>
-<script type="text/javascript">
-    //$('.progress').animate({'width':'100%'},50);
-    //第四个进度节点
-</script>
-
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
   <!-- scripts list from theme config.yml -->
   <% theme.scripts.forEach(function(url) { %>

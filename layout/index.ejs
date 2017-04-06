@@ -1,2 +1,20 @@
+<% if( (page.current === 1) && (is_home()) ) { %>
+<div class="post-header" style="background-image:url(<%= theme.post_header.img %>)">
+    <a href="<%=theme.post_header.url%>">
+        <div class="post-header-title">
+            <p>
+                <% if(theme.post_header.about) { %>
+                <% if(Array.isArray(theme.post_header.about)) { %>
+                <%- theme.post_header.about.join('</p><p>') %>
+                <% } else { %>
+                <%- theme.post_header.about %>
+                <% } %>
+                <% } %>
+            </p>
+        </div>
+    </a>
+</div>
+<% } %>
+
 <%-partial('partials/recent-posts')%>
 <%-partial('partials/pagination')%>
