@@ -8,20 +8,41 @@ $(function () {
     window.onload=loadings();
 });
 
-//侧边栏初始化以及绑定事件
 (function () {
-    $('.button-collapse').sideNav({
-            menuWidth: 300, // Default is 240
-            edge: 'left', // Choose the horizontal origin
-            closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-            draggable: false // Choose whether you can drag to open on touch screens
-        }
-    );
-    $(".nav-btn").click(function () {
-        $('.button-collapse').sideNav("show");
+    var weight=$("body").width();
+    if(weight<=768){
+        (function () {
+            $('.button-collapse').sideNav({
+                    menuWidth: 240, // Default is 240
+                    edge: 'left', // Choose the horizontal origin
+                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    draggable: false // Choose whether you can drag to open on touch screens
+                }
+            );
+            $(".nav-btn").click(function () {
+                $('.button-collapse').sideNav("show");
 
-    })
+            })
+        })();
+    }else {
+        (function () {
+            $('.button-collapse').sideNav({
+                    menuWidth: 300, // Default is 240
+                    edge: 'left', // Choose the horizontal origin
+                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    draggable: false // Choose whether you can drag to open on touch screens
+                }
+            );
+            $(".nav-btn").click(function () {
+                $('.button-collapse').sideNav("show");
+
+            })
+        })();
+    }
 })();
+
+//侧边栏初始化以及绑定事件
+
 
 //侧边栏下拉列表绑定事件
 (function () {
@@ -38,20 +59,6 @@ $(function () {
         })
 })();
 
-//移动端侧边栏滑动事件监听
-(function () {
-    var weight=$("body").width();
-    if(weight<=768){
-        $(document).on("pagecreate","body",function(){
-            $("body").on("swiperight",function(){
-                $('.button-collapse').sideNav("show");
-            });
-            $("body").on("swipeleft",function(){
-                $('.button-collapse').sideNav("hide");
-            });
-        });
-    }
-})();
 
 //回到顶部
 (function () {
