@@ -13,7 +13,7 @@ pageTitle += config.title ;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title><%=pageTitle%></title>
+  <title><%=config.title%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
     <% theme.stylesheets.forEach(function(url) { %>
@@ -22,8 +22,12 @@ pageTitle += config.title ;
   <% } %>
 </head>
 <body>
+<div class="loader">
+    <div class="loader-content">
+        <img src=/images/loading.gif alt="Loader" class="loader-loader" />
+    </div>
+</div>
 <a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="/images/list.png "  ondragstart="return false;"></div></a>
-
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
@@ -77,15 +81,33 @@ pageTitle += config.title ;
 
           <!--archives-->
           <% if(theme.sidebar.archives.use === true) { %>
-          <li class="nav-list">
-              <a  href="#" id="archives"  target="_self">
+          <li class="nav-list dropdown-btn">
+              <a  class=""  target="_self">
                   <div class="nav-ico"><img src="/images/ico/archives.png"></div><p>归档</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
               </a>
           </li>
           <% } %>
-          <ul class="dropdown-menu" id="dropdown">
+          <ul class="dropdown-menu dropdown" >
               <li class="nav-dropdown-list">
                   <%- list_archives({
+                      show_count: true,
+                      style: 'none',
+                      separator: '</li><li class="nav-dropdown-list">'
+                  }) %>
+              </li>
+          </ul>
+
+          <!--categories-->
+          <% if(theme.sidebar.categories.use === true) { %>
+          <li class="nav-list dropdown-btn">
+              <a   class=""  target="_self">
+                  <div class="nav-ico"><img src="/images/ico/categories.png"></div><p>分类</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
+              </a>
+          </li>
+          <% } %>
+          <ul class="dropdown-menu dropdown" >
+              <li class="nav-dropdown-list">
+                  <%- list_categories({
                       show_count: true,
                       style: 'none',
                       separator: '</li><li class="nav-dropdown-list">'
@@ -96,7 +118,7 @@ pageTitle += config.title ;
           <!--tags-->
           <% if(theme.sidebar.tags.use === true) { %>
           <li class="nav-list">
-              <a href="/tag" target="_self">
+              <a href="/archives" target="_self">
                   <div class="nav-ico"><img src="/images/ico/tags.png"> </div><p>标签</p>
               </a>
           </li>

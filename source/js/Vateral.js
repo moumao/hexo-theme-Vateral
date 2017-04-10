@@ -1,9 +1,19 @@
 //载入动画
 $(function () {
     function loadings() {
-       $(".progress").css({
-           "display":"none"
-       })
+        $("body").css({
+            "overflow-y":"hidden"
+        });
+        setTimeout(function(){
+            var loader = document.getElementsByClassName("loader")[0];
+            loader.className="loader fadeout" ;//使用渐隐的方法淡出loading page
+            $("body").css({
+                "overflow-y":"auto"
+            });
+            setTimeout(function(){
+                loader.style.display="none";
+            },500)
+        },500);//强制显示loading
     }
     window.onload=loadings();
 });
@@ -46,14 +56,14 @@ $(function () {
 
 //侧边栏下拉列表绑定事件
 (function () {
-        $("#archives").click(function () {
-            var height=$("#dropdown").css("display");
+        $(".dropdown-btn").click(function () {
+            var height=$(this).next().css("display");
             if(height=="none"){
-                $("#dropdown").slideDown();
-                $(".dropdown-ico").rotate({animateTo: 180});
+                $(this).next().slideDown();
+                $(this).find(".dropdown-ico").rotate({animateTo: 180});
             }else{
-                $("#dropdown").slideUp();
-                $(".dropdown-ico").rotate({animateTo: 0});
+                $(this).next().slideUp();
+                $(this).find(".dropdown-ico").rotate({animateTo: 0});
             }
 
         })
@@ -72,22 +82,29 @@ $(function () {
 })();
 
 //foot固定在底部
-$(function(){
-    function footerPosition(){
-        $("#bottom-outer").removeClass("fixed-bottom");
-        var contentHeight = document.body.scrollHeight,//网页正文全文高度
-            winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
-        if(!(contentHeight > winHeight)){
-            //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
-            $("#bottom-outer").addClass("fixed-bottom");
-        } else {
-            $("#bottom-outer").removeClass("fixed-bottom");
-        }
-    }
-    footerPosition();
-    $(window).resize(footerPosition);
-});
+(function(){
 
+    var contentHeight = document.body.scrollHeight,//网页正文全文高度
+        winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+    if(!(contentHeight > winHeight)){
+        $(".up").css({
+            "display":"none"
+        });
+        //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+        $("#bottom-outer").css({
+            "position":"absolute",
+            "bottom":0,
+            "left":0
+        });
+    } else {
+        $("#bottom-outer").css({
+            "position":"relative"
+        });
+        $("#top-button").css({
+            "display":"block"
+        });
+    }
+})();
 
 var searchFunc = function(path, search_id, content_id) {
     'use strict';
@@ -161,22 +178,22 @@ var searchFunc = function(path, search_id, content_id) {
                             keywords.forEach(function(keyword){
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
-                            })
+                            });
                             str += "<p class=\"search-result\">" + match_content +"...</p>"
                         }
                     }
-                })
+                });
                 $resultContent.innerHTML = str;
             })
         }
     })
-}
+};
 
 var inputArea = document.querySelector("#local-search-input");
 var getSearchFile = function(){
     var path = "/search.xml";
     searchFunc(path, 'local-search-input', 'local-search-result');
-}
+};
 
 inputArea.onfocus = function(){ getSearchFile() };
 inputArea.onkeydown = function(){ if(event.keyCode==13) return false};
@@ -187,4 +204,4 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
     } else {
         $(".no-result").hide();
     }
-})
+});

@@ -5,71 +5,64 @@ var categoriesList = list_categories({ show_count: false }),
   archivesList = list_archives({ show_count: false });
 %>
 
-<% if (!is_year()) { %>
-  <div id="archive">
-
-    <h1>Archives</h1>
-
-    <% if (theme.atom) { %>
-      <p>
-        The feed is available via
-        <a href="<%=theme.atom%>">atom</a>.
-      </p>
-      <br>
-    <% } %>
-
-    <aside>
-      <h2>Categories</h2>
-      <% if (categoriesList) { %>
-        <%-categoriesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Tags</h2>
-      <% if (tagsList) { %>
-        <%-tagsList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-    </aside>
-    <br>
-
-    <aside>
-      <h2>Archives</h2>
-      <% if (archivesList) { %>
-        <%-archivesList%>
-      <% } else { %>
-        <p>None.</p>
-      <% } %>
-    </aside>
-
-  </div>
-<% } else { %>
-
-  <h1><%=page.month + '/' + page.year%></h1>
-
-  <% page.posts.each(function(article) { %>
-    <div class="archive-item">
-      <% if (article.link) { %>
-        <!-- external link -->
-        <a href="<%=url_for(article.link)%>" target="_blank">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } else { %>
-        <!-- internal link -->
-        <a href="<%=url_for(article.path)%>">
-          <%=article.title || 'No Title'%>
-        </a>
-      <% } %>
-      <time datetime="<%=date_xml(article.date)%>">
-        <%=date(article.date)%>
-      </time>
+<div class="tag">
+  <% if (!is_year()) { %>
+    <div id="archive">
+        <% if (tagsList) { %>
+          <%-tagsList%>
+        <% } else { %>
+          <p>没有任何标签</p>
+        <% } %>
     </div>
+  <% } else { %>
+</div>
+
+<div id="recent-posts">
+
+  <% page.posts.each(function(post) { %>
+  <div class="recent-post-item" <% if(!post.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= post.thumbnail%>)" <% } %>>
+    <div class="post-hover">
+      <!--title-->
+      <p class="post-title"><a href="<%=config.root + post.path%>" ><%=post.title%></a></p>
+
+      <!--date-->
+        <% if (post.date) { %>
+      <p class="post-time"><%=config.author%>发布于:<time datetime="<%=post.date.toJSON()%>">
+              <%=date(post.date)%>
+        </time>
+      </p>
+        <% } %>
+
+      <!--tags-->
+      Tags:
+        <%- list_tags(post.tags, {
+          show_count: false,
+          style: 'list',
+          separator: ''
+        }) %>
+
+      <!--excerpt-->
+      <div class="post-excerpt">
+        <p>
+          摘要：
+            <%if(post.excerpt) {%>
+            <%- strip_html(post.excerpt) %>
+            <%}else{%>
+            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+            <%}%>
+        </p>
+      </div>
+      <div class="post-more"><a href="<%=config.root + post.path%>" >全文阅读</a></div>
+    </div>
+  </div>
   <% }); %>
-
+  <nav class="paging">
+      <%- paginator({
+        space: '',
+        mid_size: 1,
+        prev_text: '<div class="prev-text"><img src="/images/nav-left.png"></div>',
+        next_text: '<div class="next-text"><img src="/images/nav-right.png"></div>'
+      }) %>
+  </nav>
 <% } %>
-
+</div>

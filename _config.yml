@@ -35,6 +35,10 @@ sns:
     rss:
     douban:
 
+#默认thumbnail的数目
+thumbnail: 19
+
+
 #nav
 sidebar:
     homepage:
@@ -44,7 +48,7 @@ sidebar:
         use: true
         divider: false
     categories:
-        use: false
+        use: true
         divider: false
     about:
         use: true
@@ -53,14 +57,7 @@ sidebar:
         use: true
         divider: false
     pages:
-        关于我:
-            link: "/about"
-            icon: person
-            divider: false
-        标签云:
-            link: "/tags"
-            icon: polymer
-            divider: false
+
     article_num:
         use: false
         divider: false
