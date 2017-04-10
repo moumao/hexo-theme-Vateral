@@ -27,7 +27,7 @@ var categoriesList = list_categories({ show_count: false }),
 
       <!--date-->
         <% if (post.date) { %>
-      <p class="post-time"><%=config.author%>发布于:<time datetime="<%=post.date.toJSON()%>">
+      <p class="post-time"><%=config.author%>&nbsp&nbsp发布于:<time datetime="<%=post.date.toJSON()%>">
               <%=date(post.date)%>
         </time>
       </p>

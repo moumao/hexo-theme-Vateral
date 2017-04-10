@@ -390,6 +390,7 @@ p.no-result {
 .post-hover:hover{
     background-color: rgba(32, 32, 32, 0.5);
 }
+
 .post-title{
     text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
     font-size: 30px;
@@ -407,15 +408,33 @@ p.no-result {
     display: inline-block;
     margin-right: 10px;
 }
-.tag-list{
+.post-hover .tag-list{
+    display: inline-block;
+    margin: 0;
+    font-size: 10px;
+    margin-right: 10px;
+}
+.post-hover .tag-list-item{
+    display: inline-block;
+    margin-left: 5px;
+}
+.post-hover .tag-list-link{
+     color: white;
+     text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+ }
+.post-hover .category-list{
     display: inline-block;
     margin: 0;
     font-size: 10px;
 }
-.tag-list-link{
-     color: white;
-     text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
- }
+.post-hover .category-list-item{
+    display: inline-block;
+    margin-left: 5px;
+}
+.post-hover .category-list-link{
+    color: white;
+    text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+}
 .post-excerpt{
     text-align: left;
     margin-bottom: 50px;
