@@ -23,6 +23,14 @@
                 separator: ''
             }) %>
 
+            <!--tags-->
+            分类:
+            <%- list_categories(post.categories, {
+                show_count: false,
+                style: 'list',
+                separator: ''
+            }) %>
+
             <!--excerpt-->
             <div class="post-excerpt">
                 <p>

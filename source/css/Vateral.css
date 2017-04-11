@@ -577,22 +577,89 @@ p.no-result {
 #archive .tag-list .tag-list-item{
     float: left;
     margin: 5px;
-    padding: 20px;
+
     font-size: 15px;
     transition: all .5s;
 }
 #archive .tag-list .tag-list-item .tag-list-link{
+    display: inline-block;
+
     color: #686868;
+    padding: 20px;
     text-shadow: none;
 }
 #archive .tag-list .tag-list-item:hover{
     background-color: white;
     box-shadow: 0 0 3px rgba(174, 174, 174, 0.87);
 }
+/*文章*/
+#post{
+    width: 1050px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 150px;
+    position: relative;
+    background-color: white;
 
+}
+.post-page-title{
+    width: 100%;
+    min-height: 300px;
+    background-color: #cacaca;
+    position: relative;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.post-page-title h2{
+    display: inline-block;
+    position: absolute;
+    margin: 20px;
+    bottom: 0;
+    left: 0;
+    color: white;
+    text-shadow: 0 0 2px rgba(164, 164, 164, 0.61);
+    font-size: 35px;
+}
+
+.post-page-content{
+    padding: 40px;
+}
+.highlight{
+    overflow: auto;
+    background-color: rgba(232, 232, 232, 0.61);
+    margin: 0;
+    color: #6c6c6c;
+}
+
+.gutter{
+    display: none;
+}
+
+blockquote{
+    border-left: 5px solid rgba(164, 164, 164, 0.61);
+
+}
+.post-toc{
+    display: inline-block;
+    position: fixed;
+    top: 50px;
+    left: 30px;
+    padding: 0;
+    list-style:none;
+}
+.post-toc a{
+    color: #707070;
+}
 @media only screen and (max-width: 1092px){
 
     #recent-posts{
+        width: 96%;
+    }
+    #archive{
+        width: 96%;
+    }
+    #post{
         width: 96%;
     }
     .post-header{
@@ -600,10 +667,29 @@ p.no-result {
         margin-top: 0;
         transition: all .5s;
     }
+    .post-page-title h2{
+        font-size: 25px;
+    }
 }
 @media only screen and (max-width: 768px){
     #bottom-inner{
         font-size: 10px;
+    }
+    #archive{
+       margin-top: 100px;
+    }
+    #archive .tag-list .tag-list-item{
+        padding: 10px;
+    }
+    #post{
+        width: 100%;
+        margin-top: 0;
+     }
+    .post-page-content{
+        padding: 20px;
+    }
+    .post-toc{
+        display: none;
     }
     .up{
         top:-40px;
