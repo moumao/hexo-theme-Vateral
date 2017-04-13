@@ -68,14 +68,15 @@ reading:
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css
+  - /css/materialize.min.css
   - /css/Vateral.css
 
 # scripts loaded in the end of the body
 scripts:
   - https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js
+  - /js/materialize.min.js
   - /js/jquery.rotate.min.js
+  - /js/lazyload.min.js
   - /js/Vateral.js
 
 

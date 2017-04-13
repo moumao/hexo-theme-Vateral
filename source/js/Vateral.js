@@ -25,8 +25,8 @@ $(function () {
             $('.button-collapse').sideNav({
                     menuWidth: 240, // Default is 240
                     edge: 'left', // Choose the horizontal origin
-                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                    draggable: false // Choose whether you can drag to open on touch screens
+                    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    draggable: true // Choose whether you can drag to open on touch screens
                 }
             );
             $(".nav-btn").click(function () {
@@ -230,4 +230,14 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
     $(".post-back").click(function () {
         window.history.back();
     })
+})();
+
+(function () {
+    var $root = $('html, body');
+    $('.post-toc-link').click(function() {
+        $root.animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+    });
 })();

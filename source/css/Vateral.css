@@ -71,6 +71,17 @@ body{
     transition: background-color .5s;
     float: left;
     cursor: Pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.side-nav li>a{
+    padding: 0;
+}
+.category-link{
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .nav-list a .nav-ico{
     width: 30px;
@@ -117,8 +128,14 @@ body{
     width: 100%;
     height: 50px;
     text-decoration: none;
-    color: black;
+    color: #5b5b5b;
     transition: color .5s;
+}
+.nav-dropdown-list>.archive-link {
+    padding-left: 10px;
+}
+.nav-dropdown-list>.category-link{
+    padding-left: 10px;
 }
 .nav-dropdown-list span{
     color: white;
@@ -369,7 +386,7 @@ p.no-result {
     width: 100%;
     height: auto;
     min-height: 300px;
-    background-color: white;
+    background-color: rgba(112, 112, 112, 0.7);
     display: block;
     margin-top: 50px;
     transition: height .5s;
@@ -685,6 +702,9 @@ blockquote{
     box-shadow: 0 0 3px rgba(158, 158, 158, 0.69);
     text-align: center;
 }
+.ol{
+    list-style:none;
+}
 .post-toc-none p{
     line-height: 30px;
     margin: 0;
@@ -699,6 +719,10 @@ blockquote{
     background-color: white;
     padding: 10px;
     box-shadow: 0 0 3px rgba(158, 158, 158, 0.69);
+}
+.post-toc-child{
+    list-style:none;
+    padding-left: 20px;
 }
 .post-toc a{
     color: #707070;

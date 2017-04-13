@@ -2,7 +2,7 @@
 <div id="category">
     <div id="recent-posts">
   <% page.posts.each(function(post) { %>
-    <div class="recent-post-item" <% if(!post.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= post.thumbnail%>)" <% } %>>
+        <div class="recent-post-item lazy" <% if(!post.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> data-original="/images/random/vateral-<%=a%>.png"  <% } else { %>  data-original="<%= post.thumbnail%>"  <% } %>>
         <a class="recent-post-link" href="<%=config.root + post.path%>">
             <div class="post-hover">
                 <!--title-->

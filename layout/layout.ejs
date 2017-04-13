@@ -27,7 +27,7 @@ pageTitle += config.title ;
         <img src=/images/loading.gif alt="Loader" class="loader-loader" />
     </div>
 </div>
-<a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="/images/list.png "  ondragstart="return false;"></div></a>
+<a data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="/images/list.png "  ondragstart="return false;"></div></a>
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
@@ -37,7 +37,7 @@ pageTitle += config.title ;
               <p><%=config.author%></p>
               <div class="nav-link">
                   <% if(theme.sns.github) { %>
-                  <div class="link-box"><a href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="/images/link/github.png" ondragstart="return false;"></div></a></div>
+                  <div class="link-box"><a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="/images/link/github.png" ondragstart="return false;"></div></a></div>
                   <% } %>
 
                   <% if(theme.sns.email) { %>
@@ -153,5 +153,12 @@ pageTitle += config.title ;
     <script src="<%=url%>"></script>
   <% }); %>
 <% } %>
+<script>
+    $(function(){
+        $(".lazy").lazyload({
+            effect : "fadeIn"
+        });
+    })
+</script>
 </body>
 </html>
