@@ -20,49 +20,53 @@ var categoriesList = list_categories({ show_count: false }),
 <div id="recent-posts">
 
   <% page.posts.each(function(post) { %>
-  <div class="recent-post-item" <% if(!post.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= post.thumbnail%>)" <% } %>>
-    <div class="post-hover">
-      <!--title-->
-      <p class="post-title"><a href="<%=config.root + post.path%>" ><%=post.title%></a></p>
 
-      <!--date-->
-        <% if (post.date) { %>
-      <p class="post-time"><%=config.author%>&nbsp&nbsp发布于:<time datetime="<%=post.date.toJSON()%>">
-              <%=date(post.date)%>
-        </time>
-      </p>
-        <% } %>
+    <div class="recent-post-item" <% if(!post.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= post.thumbnail%>)" <% } %>>
+      <a class="recent-post-link" href="<%=config.root + post.path%>">
+        <div class="post-hover">
+          <!--title-->
+          <p class="post-title"><a href="<%=config.root + post.path%>" ><%=post.title%></a></p>
 
-      <!--tags-->
-      Tags:
-        <%- list_tags(post.tags, {
-          show_count: false,
-          style: 'list',
-          separator: ''
-        }) %>
+          <!--date-->
+            <% if (post.date) { %>
+          <p class="post-time"><%=config.author%>&nbsp&nbsp发布于:<time datetime="<%=post.date.toJSON()%>">
+                  <%=date(post.date)%>
+            </time>
+          </p>
+            <% } %>
 
-      <!--tags-->
-      分类:
-        <%- list_categories(post.categories, {
-          show_count: false,
-          style: 'list',
-          separator: ''
-        }) %>
+          <!--tags-->
+          Tags:
+            <%- list_tags(post.tags, {
+              show_count: false,
+              style: 'list',
+              separator: ''
+            }) %>
 
-      <!--excerpt-->
-      <div class="post-excerpt">
-        <p>
-          摘要：
-            <%if(post.excerpt) {%>
-            <%- strip_html(post.excerpt) %>
-            <%}else{%>
-            <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
-            <%}%>
-        </p>
-      </div>
-      <div class="post-more"><a href="<%=config.root + post.path%>" >全文阅读</a></div>
-    </div>
+          <!--tags-->
+          分类:
+            <%- list_categories(post.categories, {
+              show_count: false,
+              style: 'list',
+              separator: ''
+            }) %>
+
+          <!--excerpt-->
+          <div class="post-excerpt">
+            <p>
+              摘要：
+                <%if(post.excerpt) {%>
+                <%- strip_html(post.excerpt) %>
+                <%}else{%>
+                <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
+                <%}%>
+            </p>
+          </div>
+          <div class="post-more"><a href="<%=config.root + post.path%>" >全文阅读</a></div>
+        </div>
+      </a>
   </div>
+
   <% }); %>
   <nav class="paging">
       <%- paginator({

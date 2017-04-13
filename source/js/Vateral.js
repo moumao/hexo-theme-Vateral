@@ -205,3 +205,29 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
         $(".no-result").hide();
     }
 });
+
+(function($) {
+    $.fn.exist = function(){
+        if($(this).length>=1){
+            return true;
+        }
+        return false;
+    };
+})(jQuery);
+
+(function () {
+    $(".post-toc-btn").click(function () {
+        if($(".post-toc").exist()){
+            $(".post-toc-box").fadeToggle()
+        }else {
+            $(".post-toc-none").fadeToggle()
+        }
+
+    })
+})();
+
+(function () {
+    $(".post-back").click(function () {
+        window.history.back();
+    })
+})();

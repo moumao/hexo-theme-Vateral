@@ -7,7 +7,28 @@
   <%-page.content%>
   </div>
 </article>
-<%- toc(page.content, {
-  class: 'post-toc',
-  list_number: true
-}) %>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    <% if (page.prev) { %>
+  <a href="<%- config.root %><%- page.prev.path %>" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    <% } %>
+
+
+  <!-- Next Nav -->
+    <% if (page.next) { %>
+  <a href="<%- config.root %><%- page.next.path %>" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    <% } %>
+</nav>
+<div class="post-toc-btn"><img src="/images/ico/toc.png"></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <%- toc(page.content, {
+      class: 'post-toc',
+      list_number: true
+    }) %>
+</div>
+<div class="post-back"><img src="/images/ico/back.png"></div>

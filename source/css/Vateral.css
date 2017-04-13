@@ -361,6 +361,10 @@ p.no-result {
     margin: 0 auto;
     position: relative;
 }
+.recent-post-link{
+    width: auto;
+    height: 100%;
+}
 .recent-post-item{
     width: 100%;
     height: auto;
@@ -377,8 +381,15 @@ p.no-result {
     position: relative;
     overflow: auto;
     color: white;
-    text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
     font-size: 10px;
+}
+.recent-post-link{
+    top:0;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    min-height: 300px;
 }
 .post-hover{
     width: 100%;
@@ -386,13 +397,14 @@ p.no-result {
     min-height: 300px;
     padding: 10px 20px 20px 20px;
     transition: background-color .5s;
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
 }
 .post-hover:hover{
     background-color: rgba(32, 32, 32, 0.5);
 }
 
 .post-title{
-    text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
     font-size: 30px;
     display: block;
     margin-bottom: 0;
@@ -403,7 +415,7 @@ p.no-result {
 .post-time{
     font-size: 10px;
     color: white;
-    text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
     margin: 0;
     display: inline-block;
     margin-right: 10px;
@@ -420,7 +432,7 @@ p.no-result {
 }
 .post-hover .tag-list-link{
      color: white;
-     text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
  }
 .post-hover .category-list{
     display: inline-block;
@@ -433,7 +445,7 @@ p.no-result {
 }
 .post-hover .category-list-link{
     color: white;
-    text-shadow: 0px 0px 3px rgba(130, 130, 130, 0.9);
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
 }
 .post-excerpt{
     text-align: left;
@@ -443,7 +455,7 @@ p.no-result {
 .post-excerpt p{
     margin-top: 25px;
     color: white;
-    text-shadow: 0px 0px 2px rgba(130, 130, 130, 0.9);
+    text-shadow: 2px 2px 4px rgba(16, 16, 16, 0.95);
 }
 .post-more{
     width: 100px;
@@ -600,6 +612,7 @@ p.no-result {
     margin-top: 150px;
     position: relative;
     background-color: white;
+    box-shadow: 0 0 3px rgba(169, 169, 169, 0.74);
 
 }
 .post-page-title{
@@ -618,12 +631,21 @@ p.no-result {
     bottom: 0;
     left: 0;
     color: white;
-    text-shadow: 0 0 2px rgba(164, 164, 164, 0.61);
+    text-shadow: 1px 1px 3px rgba(68, 68, 68, 0.69);
     font-size: 35px;
 }
 
 .post-page-content{
     padding: 40px;
+}
+.post-page-content p{
+    overflow: auto;
+}
+.post-page-content p a{
+    display: inline-block;
+}
+.post-page-content p img{
+    width: 100%;
 }
 .highlight{
     overflow: auto;
@@ -640,35 +662,102 @@ blockquote{
     border-left: 5px solid rgba(164, 164, 164, 0.61);
 
 }
+.post-toc-btn{
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    cursor: Pointer;
+}
+.post-toc-btn img{
+    width: 100%;
+}
+.post-toc-none{
+    display: none;
+    width: 50px;
+    height: 30px;
+    position: fixed;
+    top: 70px;
+    right: 30px;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(158, 158, 158, 0.69);
+    text-align: center;
+}
+.post-toc-none p{
+    line-height: 30px;
+    margin: 0;
+    color: rgba(141, 141, 141, 0.83);
+}
 .post-toc{
     display: inline-block;
     position: fixed;
-    top: 50px;
-    left: 30px;
-    padding: 0;
+    top: 70px;
+    right: 30px;
     list-style:none;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 3px rgba(158, 158, 158, 0.69);
 }
 .post-toc a{
     color: #707070;
+}
+.post-back{
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 80px;
+    left: 30px;
+    cursor: Pointer;
+}
+.post-back img{
+    width: 100%;
+}
+.post-nav{
+    width: 1050px;
+    display: block;
+    margin: 0 auto;
+    background-color: #E9EBEC;
+    box-shadow: none;
+}
+.post-nav-content{
+    color: #707070;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.prev-content{
+    float: left;
+}
+.next-content{
+    float: right;
 }
 @media only screen and (max-width: 1092px){
 
     #recent-posts{
         width: 96%;
     }
+
     #archive{
         width: 96%;
     }
     #post{
         width: 96%;
     }
+    .post-nav{
+         width: 100%;
+         display: block;
+         margin: 0 auto;
+     }
     .post-header{
-        width: 100%;
-        margin-top: 0;
-        transition: all .5s;
+        width: 96%;
     }
     .post-page-title h2{
         font-size: 25px;
+    }
+    .post-toc-box{
+        display: none;
     }
 }
 @media only screen and (max-width: 768px){
@@ -685,11 +774,9 @@ blockquote{
         width: 100%;
         margin-top: 0;
      }
+
     .post-page-content{
         padding: 20px;
-    }
-    .post-toc{
-        display: none;
     }
     .up{
         top:-40px;
@@ -703,14 +790,19 @@ blockquote{
         left: 0;
         width: 100%;
     }
+    .post-toc-box{
+        display: none;
+    }
     .recent-post-item{
         margin-top: 30px;
         height:auto;
 
     }
     .post-header{
+        width: 100%;
         height: 300px;
         transition: all .5s;
+        margin: 0;
     }
     .post-header p{
         margin-top: 240px;
