@@ -1,3 +1,41 @@
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/MaterialIcons-Regular.eot);
+    src: url(../fonts/MaterialIcons-Regular.woff2) format('woff2'), url(../fonts/MaterialIcons-Regular.woff) format('woff'), url(../fonts/MaterialIcons-Regular.ttf) format('truetype')
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;  /* Preferred icon size */
+    color: #707070;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display: block;
+    font-size: 30px;
+    height: 40px;
+    line-height: 40px;
+}
 body{
     margin: 0;
     padding: 0;
@@ -361,8 +399,12 @@ p.no-result {
     position: absolute;
     right: 45px;
     top:20px;
-    padding: 5px;
+
     cursor: Pointer;
+}
+.material-up{
+    font-size: 20px;
+    margin: 5px;
 }
 .up img{
     position: absolute;
@@ -559,8 +601,8 @@ p.no-result {
 .next-text{
     width: 40px;
     height: 40px;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     border-radius: 20px;
     overflow: hidden;
     transition: box-shadow .5s,background-color .5s;
@@ -757,6 +799,32 @@ blockquote{
 .next-content{
     float: right;
 }
+
+/*友链界面*/
+.friends{
+    width: 500px;
+    min-height: 200px;
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+}
+.friends a{
+    color: #707070;
+}
+.friends-link{
+    line-height:25px ;
+    padding: 25px;
+    width: 100%;
+    min-height: 100px;
+    text-align: center;
+    display: block;
+    transition: all .5s;
+}
+.friends-link:hover{
+    background-color: white;
+    box-shadow: 0 0 3px 2px rgba(223, 223, 223, 0.75);
+}
 @media only screen and (max-width: 1092px){
 
     #recent-posts{
@@ -830,6 +898,11 @@ blockquote{
     }
     .post-header p{
         margin-top: 240px;
+    }
+    .friends{
+        width: 100%;
+        margin-top:50px;
+        margin-bottom: 50px;
     }
 
 }

@@ -1,0 +1,12 @@
+<div class="friends">
+<% if (site.data.friends) { %>
+<% for (var i in site.data.friends) { %>
+    <a href="<%= site.data.friends[i].link %>" target="_blank">
+        <div class="friends-link">
+            <span class="friends-links-title"><%= i %></span><br/>
+            <span><%= site.data.friends[i].descr %></span>
+        </div>
+    </a>
+<% } %>
+<% } %>
+</div>

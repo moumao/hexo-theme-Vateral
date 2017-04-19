@@ -1,18 +1,10 @@
-<%
-var pageTitle = page.title || config.subtitle || '';
-if (is_archive()) pageTitle = 'Archives';
-if (is_tag()) pageTitle = 'Tag: ' + page.tag;
-if (is_category()) pageTitle = 'Category: ' + page.category;
-if (is_month()) pageTitle += ': ' + page.month + '/' + page.year;
-if (is_year()) pageTitle += ': ' + page.year;
-pageTitle += config.title ;
-%>
-
 <!DOCTYPE html>
 <html lang="<%=config.language%>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="moumao">
+    <meta name="description" content="欢迎来到某猫のBlog,我是moumao,希望你能喜欢我的小站">
   <title><%=config.title%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
@@ -27,7 +19,7 @@ pageTitle += config.title ;
         <img src=/images/loading.gif alt="Loader" class="loader-loader" />
     </div>
 </div>
-<a data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><img src="/images/list.png "  ondragstart="return false;"></div></a>
+<a data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><i class="material-icons">list</i></div></a>
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
@@ -63,7 +55,7 @@ pageTitle += config.title ;
               <div class="nav-search">
                   <form id="search-form"> <!-- 搜索框相关 -->
                       <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
-                      <div class="nav-search-img"><img src="/images/search.png"></div>
+                      <div class="nav-search-img"><i class="material-icons">search</i></div>
                   </form>
                   <div id="local-search-result"></div> <!-- 搜索结果区 -->
                   <p class='no-result'>无搜索结果</p>
@@ -74,7 +66,7 @@ pageTitle += config.title ;
           <% if(theme.sidebar.homepage.use === true) { %>
           <li class="nav-list">
               <a href="<%= config.root %>" target="_self">
-                  <div class="nav-ico"><img src="/images/ico/home.png"> </div><p>主页</p>
+                  <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
               </a>
           </li>
           <% } %>
@@ -83,7 +75,7 @@ pageTitle += config.title ;
           <% if(theme.sidebar.archives.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a  class=""  target="_self">
-                  <div class="nav-ico"><img src="/images/ico/archives.png"></div><p>归档</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
               </a>
           </li>
           <% } %>
@@ -101,7 +93,7 @@ pageTitle += config.title ;
           <% if(theme.sidebar.categories.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a   class=""  target="_self">
-                  <div class="nav-ico"><img src="/images/ico/categories.png"></div><p>分类</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><img src="/images/ico/smalldown.png"></div>
               </a>
           </li>
           <% } %>
@@ -119,16 +111,31 @@ pageTitle += config.title ;
           <% if(theme.sidebar.tags.use === true) { %>
           <li class="nav-list">
               <a href="/archives" target="_self">
-                  <div class="nav-ico"><img src="/images/ico/tags.png"> </div><p>标签</p>
+                  <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
               </a>
           </li>
           <% } %>
-
+          <!--photo-->
+          <% if(theme.sidebar.photo.use === true) { %>
+          <li class="nav-list">
+              <a href="/photo" target="_self">
+                  <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>摄影</p>
+              </a>
+          </li>
+          <% } %>
+          <!--friends-->
+          <% if(theme.sidebar.friends.use === true) { %>
+          <li class="nav-list">
+              <a href="/friends" target="_self">
+                  <div class="nav-ico"><i class="material-icons">face</i> </div><p>友链</p>
+              </a>
+          </li>
+          <% } %>
           <!--about-->
           <% if(theme.sidebar.about.use === true) { %>
           <li class="nav-list">
               <a href="/about" target="_self">
-                  <div class="nav-ico"><img src="/images/ico/about.png"> </div><p>关于</p>
+                  <div class="nav-ico"><i class="material-icons">copyright</i> </div><p>关于</p>
               </a>
           </li>
           <% } %>
@@ -142,7 +149,7 @@ pageTitle += config.title ;
 </div>
 <div id="bottom-outer">
   <div id="bottom-inner">
-      <a  id="top-button" onfocus="this.blur();"><div class="up"><img src="/images/up.png" ondragstart="return false;"></div></a>
+      <a  id="top-button" onfocus="this.blur();"><div class="up"><i class="material-icons material-up">vertical_align_top</i></div></a>
       Copyright ©  2017  <%=config.title%><br>
       Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
   </div>

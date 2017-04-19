@@ -48,13 +48,7 @@
       </div>
 
   <% }); %>
-  <nav class="paging">
-      <%- paginator({
-        space: '',
-        mid_size: 1,
-        prev_text: '<div class="prev-text"><img src="/images/nav-left.png"></div>',
-        next_text: '<div class="next-text"><img src="/images/nav-right.png"></div>'
-      }) %>
-  </nav>
+
+  <%-partial('partials/pagination')%>
 </div>
 

@@ -50,14 +50,18 @@ sidebar:
     categories:
         use: true
         divider: false
-    about:
-        use: true
-        divider: false
     tags:
         use: true
         divider: false
-    pages:
-
+    about:
+        use: true
+        divider: false
+    friends:
+        use: true
+        divider: false
+    photo:
+        use: true
+        divider: false
     article_num:
         use: false
         divider: false
