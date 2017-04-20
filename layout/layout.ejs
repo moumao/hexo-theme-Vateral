@@ -12,6 +12,13 @@
       <link rel="stylesheet" href="<%=url%>">
     <% }); %>
   <% } %>
+  <% if(page.layout === 'photo') { %>
+    <!-- Single Gallery Page -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/css/magnific-popup.css" rel="stylesheet">
+    <link href="/css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <% }%>
 </head>
 <body>
 <div class="loader">
@@ -119,7 +126,7 @@
           <% if(theme.sidebar.photo.use === true) { %>
           <li class="nav-list">
               <a href="/photo" target="_self">
-                  <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>摄影</p>
+                  <div class="nav-ico"><i class="material-icons">insert_photo</i> </div><p>影集</p>
               </a>
           </li>
           <% } %>
@@ -154,11 +161,28 @@
       Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
   </div>
 </div>
+<% if(page.layout === 'photo') { %>
+<!-- Single Gallery Page -->
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/js/modernizr.2.5.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/templatemo_script.js"></script>
+<script type="text/javascript">
+        $('.pagination li').click(changePage);
+        $('.portfolio-item').magnificPopup({
+            type: 'image',
+            gallery:{
+                enabled:true
+            }
+        });
+</script>
+<% }%>
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
-  <!-- scripts list from theme config.yml -->
-  <% theme.scripts.forEach(function(url) { %>
-    <script src="<%=url%>"></script>
-  <% }); %>
+<!-- scripts list from theme config.yml -->
+<% theme.scripts.forEach(function(url) { %>
+<script src="<%=url%>"></script>
+<% }); %>
 <% } %>
 <script>
     $(function(){

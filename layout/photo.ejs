@@ -1,1 +1,46 @@
-<h1>影集</h1>
+<style type="text/css">
+    form {
+        float: left;
+        font-weight: 400;
+        max-width: 300px;
+        width: 100%;
+    }
+    #local-search-result li:first-child{
+        margin-top: 45px;
+    }
+    @media screen and (max-width: 980px){
+        form {
+
+        margin: 0 auto;
+    }}
+
+</style>
+<div class="main-container" id="photo">
+    <nav class="main-nav" style="background-color: white;border-bottom: #DDDDDD 1px solid;box-shadow: none;height: 104px">
+        <div id="logo" class="left" style="color: #707070">影集</div>
+    </nav>
+    <div class="content-container">
+        <header>
+            <h1 class="center-text"><%=theme.photo.name%></h1>
+            <h2 class="center-text"><%=theme.photo.about%></h2>
+        </header>
+        <div id="portfolio-content" class="center-text">
+            <div class="portfolio-page">
+                <% if (site.data.photo) { %>
+                    <% for (var i in site.data.photo) { %>
+                        <div class="portfolio-group">
+                            <a class="portfolio-item" href="<%= site.data.photo[i].large_link %>">
+                                <img src="<%= site.data.photo[i].small_link %>" alt="<%= site.data.photo[i].alt %>">
+                                <div class="detail">
+                                    <h3><%= i %></h3>
+                                    <p><%= site.data.photo[i].descr %></p>
+                                    <span class="btn" style="color: #707070;text-align: center;padding:0">查看</span>
+                                </div>
+                            </a>
+                        </div>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

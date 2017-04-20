@@ -70,6 +70,11 @@ sidebar:
 reading:
     entry_excerpt: 100
 
+#photo page
+photo:
+    name: "某猫の影集"
+    about: "这里是我日常放照片的地方"
+
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/materialize.min.css

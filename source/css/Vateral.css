@@ -827,6 +827,10 @@ blockquote{
     background-color: white;
     box-shadow: 0 0 3px 2px rgba(223, 223, 223, 0.75);
 }
+#photo{
+    margin-top: 100px;!important;
+}
+
 @media only screen and (max-width: 1092px){
 
     #recent-posts{
@@ -916,6 +920,9 @@ blockquote{
 
     .friends-link{
         width: 250px;
+    }
+    #photo{
+        margin-top: 0;!important;
     }
 
 }
