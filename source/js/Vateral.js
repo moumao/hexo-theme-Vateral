@@ -17,7 +17,50 @@ $(function () {
     }
     window.onload=loadings();
 });
+(function () {
+    var weight=$("body").width();
+    if(weight<=768){
+        $(function () {
+            function friendsload() {
+                var times=0;
+                var left=(weight-250)/2+"px";
 
+                $(".friends-link").each(function () {
+                    var friend=$(this);
+                    var time=times*200;
+                    times++;
+                    setTimeout(function () {
+                        friend.animate({
+                            "margin-left":left,
+                            "opacity":1
+                        },300)
+                    },500+time);
+
+                });
+            }
+            window.onload=friendsload();
+        });
+    }else {
+        $(function () {
+            function friendsload() {
+                var times=0;
+                $(".friends-link").each(function () {
+                    var friend=$(this);
+                    times++;
+                    var time=times*200;
+                    setTimeout(function () {
+                        friend.animate({
+                            "margin-left":"150px",
+                            "opacity":1
+                        },300)
+                    },500+time);
+
+                });
+            }
+            window.onload=friendsload();
+        });
+    }
+})();
 (function () {
     var weight=$("body").width();
     if(weight<=768){
@@ -241,3 +284,4 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
         return false;
     });
 })();
+

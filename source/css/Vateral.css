@@ -802,7 +802,7 @@ blockquote{
 
 /*友链界面*/
 .friends{
-    width: 500px;
+    width: 800px;
     min-height: 200px;
     margin: 0 auto;
     margin-top: 150px;
@@ -815,11 +815,13 @@ blockquote{
 .friends-link{
     line-height:25px ;
     padding: 25px;
-    width: 100%;
+    width: 500px;
     min-height: 100px;
     text-align: center;
     display: block;
     transition: all .5s;
+    margin:0 300px 0 0;
+    opacity: 0;
 }
 .friends-link:hover{
     background-color: white;
@@ -850,6 +852,13 @@ blockquote{
     }
     .post-toc-box{
         display: none;
+    }
+    .friends{
+        width: 600px;
+    }
+
+    .friends-link{
+        width: 300px;
     }
 }
 @media only screen and (max-width: 768px){
@@ -903,6 +912,10 @@ blockquote{
         width: 100%;
         margin-top:50px;
         margin-bottom: 50px;
+    }
+
+    .friends-link{
+        width: 250px;
     }
 
 }
