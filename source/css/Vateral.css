@@ -194,8 +194,12 @@ body{
 .nav-header{
     width: 100%;
     height:300px;
-    background-color: rgba(134, 134, 134, 0.97);
+    background-color: #707070;
     position: relative;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    text-align: center;
 }
 .nav-header img{
     width: 100%;
@@ -238,7 +242,9 @@ body{
     text-align: center;
     display: inline-block;
 }
-
+#content{
+    cursor: Pointer;
+}
 .link-box{
     width: 30px;
     height:30px;

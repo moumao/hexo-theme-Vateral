@@ -30,8 +30,8 @@
 <div id="menu-outer">
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
-          <div class="nav-header">
-              <img id="headbg" src="<%=theme.headbg%>" ondragstart="return false;">
+          <div class="nav-header" <% if(theme.headbg) { %> style="background-image: url(<%=theme.headbg%>)"<%}%>>
+              <!--<img id="headbg" src="<%=theme.headbg%>" ondragstart="return false;">-->
               <div class="header-box"><img src="<%=theme.header%>" ondragstart="return false;"></div>
               <p><%=config.author%></p>
               <div class="nav-link">
@@ -39,25 +39,18 @@
                   <div class="link-box"><a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="/images/link/github.png" ondragstart="return false;"></div></a></div>
                   <% } %>
 
-                  <% if(theme.sns.email) { %>
-                  <div class="link-box"><a href="<%= theme.sns.email %>" target="_blank"><div class="link-box-img"><img src="/images/link/email.png" ondragstart="return false;"> </div></a></div>
-                  <% } %>
-
-                  <% if(theme.sns.facebook) { %>
-                  <div class="link-box"><a href="<%= theme.sns.facebook %>" target="_blank"><div class="link-box-img"><img src="/images/link/facebook.png" ondragstart="return false;"> </div></a></div>
-                  <% } %>
-
                   <% if(theme.sns.weibo) { %>
                   <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box-img"><img src="/images/link/weibo.png" ondragstart="return false;"></div></a></div>
                   <% } %>
 
-                  <% if(theme.sns.rss) { %>
-                  <div class="link-box"><a href="<%= theme.sns.rss %>" target="_blank"><div class="link-box-img"><img src="/images/link/rss.png" ondragstart="return false;"> </div></a></div>
+                  <% if(theme.sns.zhihu) { %>
+                  <div class="link-box"><a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box-img"><img src="/images/link/zhihu.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
 
                   <% if(theme.sns.douban) { %>
                   <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="/images/link/douban.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
+
               </div>
               <div class="nav-search">
                   <form id="search-form"> <!-- 搜索框相关 -->
@@ -197,6 +190,7 @@
         } },
     ];
     Materialize.scrollFire(options);
+
 </script>
 </body>
 </html>

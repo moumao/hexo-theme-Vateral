@@ -2,40 +2,30 @@
 # html lang
 language: en
 
-# main menu navigation
-menu:
-  Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives
-  Photo: /photo
-
 # Miscelaneous
 favicon: /source/favicon.ico
 
-# head-bg 头像背景图
+# head-bg 头像背景图 
 headbg: /images/head-bg.jpg
 
-# header 头像图
-header: /images/header.jpg
+# header 头像图 
+header: /images/header.png
 
-# post-header
+# post-header 标语部分
 post_header:
   img: /images/coverpic.jpg
   about:
-    - "腹有诗书气自华"
-  url: "http://www.moumaobuchiyu.com"
+    - "hi,nice to meet you"
+  url: "http://example.com/"
 
 #链接
 sns:
-    github: "https://github.com/moumao"
-    email: "https://1195358569@qq.com"
-    facebook:
-    weibo: "http://weibo.com/u/3168872804"
-    rss:
-    douban:
+    github: "http://example.com/"
+    weibo: "http://example.com/"
+    zhihu: "http://example.com/"
+    douban: "http://example.com/"
 
-#默认thumbnail的数目
+#默认thumbnail图片的数目
 thumbnail: 19
 
 
@@ -43,28 +33,18 @@ thumbnail: 19
 sidebar:
     homepage:
         use: true
-        divider: false
     archives:
         use: true
-        divider: false
     categories:
         use: true
-        divider: false
     tags:
-        use: true
-        divider: false
-    about:
-        use: true
-        divider: false
-    friends:
-        use: true
-        divider: false
-    photo:
-        use: true
-        divider: false
-    article_num:
         use: false
-        divider: false
+    about:
+        use: false
+    friends:
+        use: false
+    photo:
+        use: false
 
 # Reading experience
 reading:
@@ -72,8 +52,8 @@ reading:
 
 #photo page
 photo:
-    name: "某猫の影集"
-    about: "这里是我日常放照片的地方"
+    name: "影集名称"
+    about: "影集简介"
 
 # stylesheets loaded in the <head>
 stylesheets:
