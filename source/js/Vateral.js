@@ -63,10 +63,10 @@ $(function () {
 })();
 (function () {
     var weight=$("body").width();
-    if(weight<=768){
+    if(weight<=350){
         (function () {
             $('.button-collapse').sideNav({
-                    menuWidth: 240, // Default is 240
+                    menuWidth: 250, // Default is 240
                     edge: 'left', // Choose the horizontal origin
                     closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
                     draggable: false // Choose whether you can drag to open on touch screens
@@ -80,7 +80,7 @@ $(function () {
     }else {
         (function () {
             $('.button-collapse').sideNav({
-                    menuWidth: 300, // Default is 240
+                    menuWidth: 280, // Default is 240
                     edge: 'left', // Choose the horizontal origin
                     closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
                     draggable: false // Choose whether you can drag to open on touch screens

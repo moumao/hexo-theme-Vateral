@@ -3,5 +3,18 @@
   "version": "0.0.0",
   "description": "Vateral hexo theme",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlclean": "^2.7.14",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-jslint": "^1.0.10",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.1.2"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.4"
+  }
 }

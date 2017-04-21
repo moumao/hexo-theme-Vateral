@@ -77,15 +77,15 @@ photo:
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - /css/materialize.min.css
-  - /css/Vateral.css
+  - https://cdn.bootcss.com/materialize/0.98.2/css/materialize.min.css
+  - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
-  - https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js
-  - /js/materialize.min.js
+  - https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+  - https://cdn.bootcss.com/materialize/0.98.2/js/materialize.min.js
+  - https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
   - /js/jquery.rotate.min.js
-  - /js/lazyload.min.js
-  - /js/Vateral.js
+  - /js/Vateral.min.js
 
 
