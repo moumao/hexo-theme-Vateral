@@ -953,5 +953,6 @@ blockquote{
 @media only screen and (max-width: 350px){
     .post-toc-btn{
         display: none;
+
     }
 }

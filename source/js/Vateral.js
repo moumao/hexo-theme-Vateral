@@ -1,22 +1,17 @@
-//载入动画
-$(function () {
-    function loadings() {
-        $("body").css({
-            "overflow-y":"hidden"
-        });
-        setTimeout(function(){
-            var loader = document.getElementsByClassName("loader")[0];
-            loader.className="loader fadeout" ;//使用渐隐的方法淡出loading page
-            $("body").css({
-                "overflow-y":"auto"
-            });
-            setTimeout(function(){
-                loader.style.display="none";
-            },500)
-        },500);//强制显示loading
-    }
-    window.onload=loadings();
-});
+(function () {
+    window.onload=function () {
+        $(".progress").animate({
+            "opacity":0
+        })
+    };
+    setTimeout(function () {
+        $(".progress").animate({
+            "opacity":0
+        })
+    },1000)
+})();
+
+
 (function () {
     var weight=$("body").width();
     if(weight<=768){
@@ -34,7 +29,7 @@ $(function () {
                             "margin-left":left,
                             "opacity":1
                         },300)
-                    },500+time);
+                    },time);
 
                 });
             }
@@ -53,7 +48,7 @@ $(function () {
                             "margin-left":"150px",
                             "opacity":1
                         },300)
-                    },500+time);
+                    },time);
 
                 });
             }
@@ -285,3 +280,8 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
     });
 })();
 
+$(function(){
+    $(".lazy").lazyload({
+        effect : "fadeIn"
+    });
+})
