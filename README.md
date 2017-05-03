@@ -40,6 +40,15 @@ about页面：
 
 然后编辑里边的index.md文件
 
+```
+---
+title: 关于
+date: 2017-03-20 20:57:33
+thumbnail: /images/random/bg4.jpg
+layout: about
+---
+```
+
 friends页面：
 
 在 hexo 目录下的 source 文件夹内创建一个名为friends的文件夹。
@@ -95,11 +104,15 @@ layout: photo
 name:
     large_link: /images/photo/1-large.jpg
     small_link: /images/photo/1-small.jpg
+    very_small_link: /images/photo/1-very-small.jpg
     alt: "image 1"
-    descr: "简介"
 ```
 
 *注：alt属性要对每照片编号
+
+large_link: 原图
+small_link: 小图片，建议正方形
+very_small_link:模糊加载时首先加载的模糊图片
 
 如果想要添加多个图片，重复填写即可
 
@@ -117,4 +130,11 @@ search:
 	path: search.xml
 	field: all
 ```
+
+### 计数统计
+
+在主题配置文件中visitor属性设置为true即可开启全站的计数统计
+
 至此配置基本结束
+
+如遇bug等问题欢迎反馈
