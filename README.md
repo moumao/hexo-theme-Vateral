@@ -1,6 +1,6 @@
 ## hexo-theme-Vateral
 
-hexo主题 vateral 灵感来自material
+hexo主题 vateral
 
 示例网站：[某猫のBlog](https://www.moumaobuchiyu.com)
 
