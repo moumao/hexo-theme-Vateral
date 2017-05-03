@@ -2,6 +2,12 @@
 <article id="post">
   <div class="post-page-title" <% if(!page.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= page.thumbnail%>)" <% } %>>
   <h2><%=page.title%></h2>
+    <% if (page.date) { %>
+  <p>作者:<%=config.author%> &nbsp&nbsp 发布于:<time datetime="<%=page.date.toJSON()%>">
+          <%=date(page.date)%>
+    </time>
+  </p>
+    <% } %>
   </div>
   <div class="post-page-content">
   <%-page.content%>
