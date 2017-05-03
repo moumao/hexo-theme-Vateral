@@ -15,19 +15,21 @@ header: https://moumao.moumaobuchiyu.com/images/header.jpg
 post_header:
   img: https://moumao.moumaobuchiyu.com/images/coverpic.jpg
   about:
-    - "腹有诗书气自华"
-  url: "http://hanyu.baidu.com/shici/detail?pid=becb1fc64f9f45448fad721979b1f072&from=kg0"
+    - "您好 欢迎使用Vateral主题"
+  url: "http://example.com"
 
 #链接
 sns:
-    github: "https://github.com/moumao"
-    weibo: "http://weibo.com/u/3168872804"
-    zhihu: "https://www.zhihu.com/people/mou-mao-75/activities"
-    douban: 
+    github: "http://example.com"
+    weibo: "http://example.com"
+    zhihu: "http://example.com"
+    douban: "http://example.com"
 
 #默认thumbnail图片的数目
 thumbnail: 19
 
+#访客
+visitor: false
 
 #nav
 sidebar:
@@ -40,11 +42,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: true
+        use: false
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
@@ -52,8 +54,8 @@ reading:
 
 #photo page
 photo:
-    name: "某猫の影集"
-    about: "喜欢人像摄影 偶尔拍拍风景 希望你会喜欢我的照片"
+    name: "影集名称"
+    about: "影集简介"
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -66,6 +68,7 @@ scripts:
   - https://moumao.moumaobuchiyu.com/js/materialize.min.js
   - https://moumao.moumaobuchiyu.com/js/lazyload.min.js
   - https://moumao.moumaobuchiyu.com/js/jquery.rotate.min.js
+  - //dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js
   - https://moumao.moumaobuchiyu.com/js/Vateral.min.js
 
 

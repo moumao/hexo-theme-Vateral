@@ -295,6 +295,8 @@ body{
 .nav-search:hover{
     background-color: rgba(61, 61, 61, 0.5);
 }
+
+
 /*搜索结果区*/
 #local-search-result {
     width: 100%;
@@ -559,13 +561,16 @@ p.no-result {
     position: relative;
     overflow: auto;
 }
+#busuanzi_container_site_uv{
+    color: white;
+}
 .post-header-title{
     width: 100%;
     height: auto;
     max-height: 350px;
     position: absolute;
-    bottom: 50px;
-
+    bottom: 40px;
+    text-shadow: 0 0 10px  #393939;
 }
 
 .post-header-title p{
@@ -698,14 +703,23 @@ p.no-result {
 .post-page-title h2{
     display: inline-block;
     position: absolute;
-    margin: 20px;
-    bottom: 0;
+    margin: 0 0 0 20px;
+    bottom: 40px;
     left: 0;
     color: white;
     text-shadow: 1px 1px 3px rgba(68, 68, 68, 0.69);
     font-size: 35px;
 }
-
+.post-page-title p{
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    margin: 0 0 10px 0;
+    bottom: 0;
+    line-height: 30px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(68, 68, 68, 0.69);
+}
 .post-page-content{
     padding: 40px;
 }
@@ -718,11 +732,23 @@ p.no-result {
 .post-page-content p img{
     width: 100%;
 }
+.post-page-content h1{
+    font-size: 3.3rem;
+}
 .post-page-content h2{
-    font-size: 2.56rem;
+    font-size: 2.9rem;
 }
 .post-page-content h3{
-    font-size: 1.8rem;
+    font-size: 2.6rem;
+}
+.post-page-content h4{
+    font-size: 2.2rem;
+}
+.post-page-content h5{
+    font-size: 1.9rem;
+}
+.post-page-content h6{
+    font-size: 1.4rem;
 }
 .post-page-content  pre{
     margin: 0;
@@ -733,14 +759,14 @@ p.no-result {
     margin: 0;
     color: #6c6c6c;
 }
-
 .gutter{
     display: none;
 }
-
 blockquote{
     border-left: 5px solid rgba(164, 164, 164, 0.61);
-
+    background-color:#F1F1F1 ;
+    padding-bottom: 3px;
+    padding-top: 3px;
 }
 .post-toc-btn{
     width: 20px;

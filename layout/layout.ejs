@@ -21,11 +21,6 @@
     <% }%>
 </head>
 <body>
-<!--<div class="loader">
-    <div class="loader-content">
-        <img src=/images/loading.gif alt="Loader" class="loader-loader" />
-    </div>
-</div>-->
 <div class="progress">
     <div class="indeterminate"></div>
 </div>
@@ -157,14 +152,16 @@
       Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
   </div>
 </div>
+
+<!--影集界面需要的资源-->
 <% if(page.layout === 'photo') { %>
-<!-- Single Gallery Page -->
 <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/templatemo_script.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/exif.js"></script>
+<script type="text/javascript" src="/js/photopage.js"></script>
 <script type="text/javascript">
 
     var boxes=$('.portfolio-item');
@@ -176,101 +173,9 @@
           }
     });
 
-    // 判断图片加载的函数
-    function isImgLoad(img,callback){
-        var timer = setInterval(function() {
-            if (img.height()==250) {
-                callback(img)
-                clearInterval(timer)
-            }
-        }, 50)
-    }
-
-    $(document).ready(function () {
-
-        // 加载完成
-        /*boxes.each(function () {
-
-            var small=$(this).find(".img-small")
-            var _this=$(this)
-            isImgLoad(small,function () {
-
-                small.animate({
-                    "opacity":1
-                },800)
-
-                setTimeout(function () {
-                    _this.parent(".portfolio-group ").css({
-                        "backgroundImage":"none"
-                    })
-                },1200)
-            })
-        })*/
-
-        boxes.each(function () {
-
-            var _this=$(this)
-            var small=$(this).find(".img-small")
-            //var over = $(this).parent()
-            var small_image = new Image();
-            small_image.src=small[0].src;
-
-            //var small_bg = new Image();
-            //var url=small.parent().parent().parent().css('backgroundImage');
-
-            //var last=url.length-2;
-            //var src =url.substring(5,last)
-            //small_bg.src = src
-
-            var image = new Image();
-            var father =$(this).find(".detail");
-            image.src=$(this).attr("href");
-
-            /*if(!small_bg.width==0){
-                over.animate({
-                    "opacity":0
-                },300)
-            }*/
-
-            small_image.onload = function() {
-                small.animate({
-                    "opacity":1
-                },800)
-               // small.next("div").css({"backgroundImage":"url("+small_bg+")"})
-                setTimeout(function () {
-                    _this.parent(".portfolio-group ").css({
-                        "backgroundImage":"none"
-                    })
-                },1200)
-                image.onload = function () {
-                    EXIF.getData(image, function(){
-                        var  Model = EXIF.getTag(image, "Model");//相机
-                        var  FocalLength = EXIF.getTag(image, "FocalLength");//焦段
-                        var  FNumber = EXIF.getTag(image, "FNumber");//光圈
-                        var  ExposureTime = 1/EXIF.getTag(image, "ExposureTime");//快门
-                        var  ISOSpeedRatings = EXIF.getTag(image, "ISOSpeedRatings");//ISO
-                        if (Model==undefined ||FocalLength==undefined ||FNumber==undefined ||ExposureTime==undefined ||ISOSpeedRatings==undefined ){
-                            Model="暂无数据"
-                            FocalLength="暂无数据"
-                            FNumber="暂无数据"
-                            ExposureTime="暂无数据"
-                            ISOSpeedRatings="暂无数据"
-                        }
-                        father.children(".Model").empty().append("相机："+Model);
-                        father.children(".FocalLength").empty().append("焦段："+FocalLength);
-                        father.children(".FNumber").empty().append("光圈："+FNumber);
-                        father.children(".ExposureTime").empty().append("快门："+ExposureTime);
-                        father.children(".ISOSpeedRatings").empty().append("感光度："+ISOSpeedRatings);
-                    })
-                }
-            }
-        })
-
-    })
-
-
 </script>
 <% }%>
+
 <% if (theme.scripts !== undefined && theme.scripts.length > 0) { %>
 <!-- scripts list from theme config.yml -->
 <% theme.scripts.forEach(function(url) { %>
