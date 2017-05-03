@@ -13,7 +13,35 @@
 
         margin: 0 auto;
     }}
-
+    .photo-box{
+        background-size: cover;
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    /*.detail h3,.detail p{
+        color:white;
+        text-shadow: 0 0 4px #8e8e8e;
+    }*/
+    .loaded {
+        opacity: 1;
+    }
+    .img-small {
+        opacity: 0;
+        transition: opacity 1s linear;
+    }
+    content img {
+        width: 100%;
+    }
+    .over{
+        width: 250px;
+        height: 250px;
+        z-index: 99999999;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+    }
 </style>
 <div class="main-container" id="photo">
     <nav class="main-nav" style="background-color: white;border-bottom: #DDDDDD 1px solid;box-shadow: none;height: 104px">
@@ -28,15 +56,21 @@
             <div class="portfolio-page">
                 <% if (site.data.photo) { %>
                     <% for (var i in site.data.photo) { %>
-                        <div class="portfolio-group">
-                            <a class="portfolio-item" href="<%= site.data.photo[i].large_link %>">
-                                <img src="<%= site.data.photo[i].small_link %>" alt="<%= site.data.photo[i].alt %>">
-                                <div class="detail">
+                        <div class="portfolio-group photo-box" style="background-image: url(<%= site.data.photo[i].very_small_link %>);">
+                           <!-- <div class="over">-->
+                            <a class="portfolio-item placeholder" id="href"  href="<%= site.data.photo[i].large_link %>" >
+                                <img  class="img-small" src="<%= site.data.photo[i].small_link %>" alt="<%= site.data.photo[i].alt %>">
+                                <div class="detail photo-box"  >
                                     <h3><%= i %></h3>
-                                    <p><%= site.data.photo[i].descr %></p>
-                                    <span class="btn" style="color: #707070;text-align: center;padding:0">查看</span>
+                                    <p class="Model" style=" padding-top: 0;padding-bottom: 0;">相机：数据载入中...</p>
+                                    <p class="FocalLength" style=" padding-top: 0;padding-bottom: 0;">焦段：数据载入中...</p>
+                                    <p class="FNumber" style=" padding-top: 0;padding-bottom: 0;"> 光圈：数据载入中...</p>
+                                    <p class="ExposureTime" style=" padding-top: 0;padding-bottom: 0;">快门：数据载入中...</p>
+                                    <p class="ISOSpeedRatings" style=" padding-top: 0;padding-bottom: 0;">感光度：数据载入中...</p>
+                                   <!-- <span class="btn" style="color: #707070;text-align: center;padding:0">查看大图</span>-->
                                 </div>
                             </a>
+                            <!--</div>-->
                         </div>
                     <% } %>
                 <% } %>
