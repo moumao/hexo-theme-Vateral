@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="moumao">
+    <meta name="keywords" content="某猫">
     <meta name="description" content="欢迎来到某猫のBlog,我是moumao,希望你能喜欢我的小站">
+    <meta name="baidu-site-verification" content="4t9ANfuvCP" />
   <title><%=config.title%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
@@ -15,9 +16,9 @@
   <% if(page.layout === 'photo') { %>
     <!-- Single Gallery Page -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/magnific-popup.css" rel="stylesheet">
-    <link href="/css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="https://moumao.moumaobuchiyu.com/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://moumao.moumaobuchiyu.com/css/magnific-popup.css" rel="stylesheet">
+    <link href="https://moumao.moumaobuchiyu.com/css/templatemo_style.css" rel="stylesheet" type="text/css">
     <% }%>
 </head>
 <body>
@@ -34,20 +35,25 @@
               <p><%=config.author%></p>
               <div class="nav-link">
                   <% if(theme.sns.github) { %>
-                  <div class="link-box"><a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="/images/link/github.png" ondragstart="return false;"></div></a></div>
+                  <div class="link-box"><a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="https://moumao.moumaobuchiyu.com/images/link/github.png" ondragstart="return false;"></div></a></div>
+                  <% } %>
+
+                  <% if(theme.sns.email) { %>
+                  <div class="link-box"><a href="mailto:<%= theme.sns.email %>"> <div class="link-box-img"><img src="https://moumao.moumaobuchiyu.com/images/link/email.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
 
                   <% if(theme.sns.weibo) { %>
-                  <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box-img"><img src="/images/link/weibo.png" ondragstart="return false;"></div></a></div>
+                  <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box-img"><img src="https://moumao.moumaobuchiyu.com/images/link/weibo.png" ondragstart="return false;"></div></a></div>
                   <% } %>
 
                   <% if(theme.sns.zhihu) { %>
-                  <div class="link-box"><a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box-img"><img src="/images/link/zhihu.png" ondragstart="return false;"> </div></a></div>
+                  <div class="link-box"><a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box-img"><img src="https://moumao.moumaobuchiyu.com/images/link/zhihu.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
 
                   <% if(theme.sns.douban) { %>
-                  <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="/images/link/douban.png" ondragstart="return false;"> </div></a></div>
+                  <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="https://moumao.moumaobuchiyu.com/images/link/douban.png" ondragstart="return false;"> </div></a></div>
                   <% } %>
+
 
               </div>
               <div class="nav-search">
@@ -73,7 +79,7 @@
           <% if(theme.sidebar.archives.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a  class=""  target="_self">
-                  <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><img src="/images/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><img src="https://moumao.moumaobuchiyu.com/images/smalldown.png"></div>
               </a>
           </li>
           <% } %>
@@ -91,7 +97,7 @@
           <% if(theme.sidebar.categories.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a   class=""  target="_self">
-                  <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><img src="/images/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><img src="https://moumao.moumaobuchiyu.com/images/smalldown.png"></div>
               </a>
           </li>
           <% } %>
@@ -161,7 +167,7 @@
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/templatemo_script.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/exif.js"></script>
-<script type="text/javascript" src="/js/photopage.js"></script>
+<script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/photopage.js"></script>
 <script type="text/javascript">
 
     var boxes=$('.portfolio-item');
@@ -181,6 +187,10 @@
 <% theme.scripts.forEach(function(url) { %>
 <script src="<%=url%>"></script>
 <% }); %>
+<% } %>
+
+<% if(theme.visitor) { %>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <% } %>
 </body>
 </html>
