@@ -50,34 +50,6 @@ body{
     height: auto;
     padding: 0;
 }
-.loader {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background:white;
-    text-align: center;
-    top:0;
-    /* loader页面消失采用渐隐的方式*/
-    -webkit-transition: opacity 3s ease;
-    -moz-transition: opacity 3s ease;
-    -o-transition: opacity 3s ease;
-    transition: opacity 3s ease;
-}
-.loader-content  {
-    display: block;
-    position: relative;
-    top: 45%;
-}
-.loader-content img{
-    width: 400px;
-    height: 300px;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -200px;
-}
 .fadeout {
     opacity: 0;
     filter: alpha(opacity=0);
@@ -97,10 +69,6 @@ body{
     position:fixed;
     cursor: Pointer;
 }
-.nav-btn img{
-    width: 100%;
-}
-
 /*导航*/
 .nav-list{
     width: 100%;
@@ -141,9 +109,9 @@ body{
 }
 
 .dropdown-ico{
-    width: 14px;
-    height: 14px;
-    margin: 18px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
     float: right;
     position: relative;
 }
@@ -250,16 +218,23 @@ body{
     height:30px;
     margin: 5px;
     display: inline-block;
-    position: relative;
+    background-image: url(../images/link/sprite.png);
 }
-.link-box-img{
-    width: 30px;
-    height:30px;
+.douban{
+    background-position: -5px 0;
 }
-.link-box-img img{
-    width: 100%;
+.email{
+    background-position: -37px 0;
 }
-
+.github{
+    background-position: -68.5px 0;
+}
+.weibo{
+    background-position: -101px 0;
+}
+.zhihu{
+    background-position: -132px 0;
+}
 .nav-search{
     width: 100%;
     height: 45px;
