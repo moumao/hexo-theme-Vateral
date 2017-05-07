@@ -7,7 +7,11 @@
     setTimeout(function () {
         $(".progress").animate({
             "opacity":0
+
         })
+            .css({
+                "display":"none"
+            })
     },1000)
 })();
 

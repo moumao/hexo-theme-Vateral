@@ -218,22 +218,23 @@ body{
     height:30px;
     margin: 5px;
     display: inline-block;
-    background-image: url(../images/link/sprite.png);
+    background-image: url(https://moumao.moumaobuchiyu.com/images/link/all.png);
+    background-size: cover;
 }
-.douban{
-    background-position: -5px 0;
-}
-.email{
-    background-position: -37px 0;
+.twitter{
+    background-position: 0 0;
 }
 .github{
-    background-position: -68.5px 0;
+    background-position: -119px 0;
+}
+.email{
+    background-position: -60px 0;
 }
 .weibo{
-    background-position: -101px 0;
+    background-position: -30px 0;
 }
 .zhihu{
-    background-position: -132px 0;
+    background-position: -89px 0;
 }
 .nav-search{
     width: 100%;

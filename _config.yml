@@ -3,7 +3,7 @@
 language: en
 
 # Miscelaneous
-favicon: /source/favicon.ico
+favicon: https://moumao.moumaobuchiyu.com/source/favicon.ico
 
 # head-bg 头像背景图 
 headbg: https://moumao.moumaobuchiyu.com/images/head-bg.jpg
@@ -15,7 +15,7 @@ header: https://moumao.moumaobuchiyu.com/images/header.jpg
 post_header:
   img: https://moumao.moumaobuchiyu.com/images/coverpic.jpg
   about:
-    - "腹有诗书气自华"
+    - "你好啊 你可以叫我某猫"
   url: "http://moumaobuchiyu.com"
 
 #链接
@@ -23,14 +23,14 @@ sns:
     github: "https://github.com/moumao"
     weibo: "http://weibo.com/u/3168872804"
     zhihu: "https://www.zhihu.com/people/mou-mao-75/activities"
-    douban:
+    twitter: "https://twitter.com/vaterial_moumao"
     email: "1195358569@qq.com"
 
 #默认thumbnail图片的数目
 thumbnail: 19
 
 #访客
-visitor: false
+visitor: true
 
 #nav
 sidebar:
@@ -60,7 +60,7 @@ photo:
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - https://cdn.bootcss.com/materialize/0.98.2/css/materialize.min.css
+  - https://moumao.moumaobuchiyu.com/css/materialize.min.css
   - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
