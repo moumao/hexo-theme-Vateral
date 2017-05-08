@@ -3,33 +3,33 @@
 language: en
 
 # Miscelaneous
-favicon: https://moumao.moumaobuchiyu.com/source/favicon.ico
+favicon: /source/favicon.ico
 
 # head-bg 头像背景图 
-headbg: https://moumao.moumaobuchiyu.com/images/head-bg.jpg
+headbg: /images/head-bg.jpg
 # header 头像图 
-header: https://moumao.moumaobuchiyu.com/images/header.jpg
+header: /images/header.jpg
 
 # post-header 标语部分
 post_header:
-  img: https://moumao.moumaobuchiyu.com/images/coverpic.jpg
+  img: /images/coverpic.jpg
   about:
-    - "你好啊 你可以叫我某猫"
-  url: "http://moumaobuchiyu.com"
+    - "你好啊 欢迎来到本站"
+  url: "http://example.com"
 
 #链接
 sns:
-    github: "https://github.com/moumao"
-    weibo: "http://weibo.com/u/3168872804"
-    zhihu: "https://www.zhihu.com/people/mou-mao-75/activities"
-    twitter: "https://twitter.com/vaterial_moumao"
-    email: "1195358569@qq.com"
+    github: "http://example.com"
+    weibo: "http://example.com"
+    zhihu: "http://example.com"
+    twitter: "http://example.com"
+    email: "http://example.com"
 
 #默认thumbnail图片的数目
 thumbnail: 19
 
 #访客
-visitor: true
+visitor: false
 
 #nav
 sidebar:
@@ -40,13 +40,13 @@ sidebar:
     categories:
         use: true
     tags:
-        use: true
+        use: false
     about:
-        use: true
+        use: false
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
@@ -54,20 +54,20 @@ reading:
 
 #photo page
 photo:
-    name: "某猫の影集"
-    about: "希望 你会 喜欢我拍的照片"
+    name: "影集名称"
+    about: "影集简介"
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - https://moumao.moumaobuchiyu.com/css/materialize.min.css
+  - http://cdn.bootcss.com/materialize/0.98.2/css/materialize.min.css
   - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
-  - https://moumao.moumaobuchiyu.com/js/jquery-3.1.1.min.js
-  - https://moumao.moumaobuchiyu.com/js/materialize.min.js
-  - https://moumao.moumaobuchiyu.com/js/lazyload.min.js
-  - https://moumao.moumaobuchiyu.com/js/jquery.rotate.min.js
-  - https://moumao.moumaobuchiyu.com/js/Vateral.min.js
+  - http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
+  - http://cdn.bootcss.com/materialize/0.98.2/js/materialize.min.js
+  - http://cdn.bootcss.com/jquery_lazyload/1.9.6/jquery.lazyload.min.js
+  - /js/jquery.rotate.min.js
+  - /js/Vateral.min.js
 
 

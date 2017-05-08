@@ -221,7 +221,7 @@ body{
     height:30px;
     margin: 5px;
     display: inline-block;
-    background-image: url(https://moumao.moumaobuchiyu.com/images/link/all.png);
+    background-image: url(../images/link/all.png);
     background-size: cover;
 }
 .twitter{
