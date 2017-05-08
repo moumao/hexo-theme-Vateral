@@ -1,15 +1,27 @@
 (function () {
+
     window.onload=function () {
         $(".progress").animate({
             "opacity":0
         })
     };
+    $(".post-fix").animate({
+        "opacity":0
+    },1000)
     setTimeout(function () {
         $(".progress").animate({
             "opacity":0
+
         })
+            .css({
+                "display":"none"
+            })
+       /* $(".post-fix").css({
+            "display":"none"
+        })*/
     },1000)
 })();
+
 
 
 (function () {
@@ -53,6 +65,9 @@
                 });
             }
             window.onload=friendsload();
+           /* $(".post-header").animate({
+                "margin-top":"100px"
+            },300)*/
         });
     }
 })();

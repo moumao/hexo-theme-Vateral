@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="keywords" content="moumao">
+    <meta name="keywords" content="某猫">
     <meta name="description" content="欢迎来到某猫のBlog,我是moumao,希望你能喜欢我的小站">
+    <meta name="baidu-site-verification" content="4t9ANfuvCP" />
   <title><%=config.title%></title>
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
     <!-- stylesheets list from config.yml -->
@@ -15,13 +16,20 @@
   <% if(page.layout === 'photo') { %>
     <!-- Single Gallery Page -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-    <link href="/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="/css/magnific-popup.css" rel="stylesheet">
-    <link href="/css/templatemo_style.css" rel="stylesheet" type="text/css">
+    <link href="https://moumao.moumaobuchiyu.com/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://moumao.moumaobuchiyu.com/css/magnific-popup.css" rel="stylesheet">
+    <link href="https://moumao.moumaobuchiyu.com/css/templatemo_style.css" rel="stylesheet" type="text/css">
     <% }%>
+    <style type="text/css">
+        html {
+            font-family: GillSans, Calibri, Trebuchet, sans-serif;
+            font-weight:300;
+        }
+
+    </style>
 </head>
 <body>
-<div class="progress">
+<div class="progress" >
     <div class="indeterminate"></div>
 </div>
 <a data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><i class="material-icons">list</i></div></a>
@@ -29,26 +37,24 @@
   <div id="menu-inner">
       <ul id="slide-out" class="side-nav">
           <div class="nav-header" <% if(theme.headbg) { %> style="background-image: url(<%=theme.headbg%>)"<%}%>>
-              <!--<img id="headbg" src="<%=theme.headbg%>" ondragstart="return false;">-->
               <div class="header-box"><img src="<%=theme.header%>" ondragstart="return false;"></div>
               <p><%=config.author%></p>
               <div class="nav-link">
+                  <% if(theme.sns.twitter) { %>
+                  <a href="<%= theme.sns.twitter %>" target="_blank"> <div class="link-box twitter"></div></a>
+                  <% } %>
                   <% if(theme.sns.github) { %>
-                  <div class="link-box"><a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box-img"><img src="/images/link/github.png" ondragstart="return false;"></div></a></div>
+                  <a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box github"></div></a>
                   <% } %>
-
+                  <% if(theme.sns.email) { %>
+                  <a href="mailto:<%= theme.sns.email %>"><div class="link-box email"></div></a>
+                  <% } %>
                   <% if(theme.sns.weibo) { %>
-                  <div class="link-box"><a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box-img"><img src="/images/link/weibo.png" ondragstart="return false;"></div></a></div>
+                  <a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box weibo"></div></a>
                   <% } %>
-
                   <% if(theme.sns.zhihu) { %>
-                  <div class="link-box"><a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box-img"><img src="/images/link/zhihu.png" ondragstart="return false;"> </div></a></div>
+                  <a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box zhihu"></div></a>
                   <% } %>
-
-                  <% if(theme.sns.douban) { %>
-                  <div class="link-box"><a href="<%= theme.sns.douban %>" target="_blank"> <div class="link-box-img"><img src="/images/link/douban.png" ondragstart="return false;"> </div></a></div>
-                  <% } %>
-
               </div>
               <div class="nav-search">
                   <form id="search-form"> <!-- 搜索框相关 -->
@@ -73,7 +79,7 @@
           <% if(theme.sidebar.archives.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a  class=""  target="_self">
-                  <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><img src="/images/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
               </a>
           </li>
           <% } %>
@@ -91,7 +97,7 @@
           <% if(theme.sidebar.categories.use === true) { %>
           <li class="nav-list dropdown-btn">
               <a   class=""  target="_self">
-                  <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><img src="/images/smalldown.png"></div>
+                  <div class="nav-ico"><i class="material-icons">dashboard</i></div><p>分类</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
               </a>
           </li>
           <% } %>
@@ -155,17 +161,16 @@
 
 <!--影集界面需要的资源-->
 <% if(page.layout === 'photo') { %>
-<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/modernizr.2.5.3.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/templatemo_script.js"></script>
 <script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/exif.js"></script>
-<script type="text/javascript" src="/js/photopage.js"></script>
+<script type="text/javascript" src="https://moumao.moumaobuchiyu.com/js/photopage.js"></script>
 <script type="text/javascript">
 
     var boxes=$('.portfolio-item');
-
     boxes.magnificPopup({
           type: 'image',
           gallery:{
@@ -181,6 +186,10 @@
 <% theme.scripts.forEach(function(url) { %>
 <script src="<%=url%>"></script>
 <% }); %>
+<% } %>
+
+<% if(theme.visitor) { %>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <% } %>
 </body>
 </html>

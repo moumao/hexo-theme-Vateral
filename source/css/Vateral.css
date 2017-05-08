@@ -40,6 +40,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #E9EBEC;
+    font-weight:300;
 }
 /*去除jquery默认样式*/
 .ui-loader-default{ display:none}
@@ -50,34 +51,6 @@ body{
     height: auto;
     padding: 0;
 }
-.loader {
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    height: 100%;
-    background:white;
-    text-align: center;
-    top:0;
-    /* loader页面消失采用渐隐的方式*/
-    -webkit-transition: opacity 3s ease;
-    -moz-transition: opacity 3s ease;
-    -o-transition: opacity 3s ease;
-    transition: opacity 3s ease;
-}
-.loader-content  {
-    display: block;
-    position: relative;
-    top: 45%;
-}
-.loader-content img{
-    width: 400px;
-    height: 300px;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    margin-top: -150px;
-    margin-left: -200px;
-}
 .fadeout {
     opacity: 0;
     filter: alpha(opacity=0);
@@ -85,6 +58,8 @@ body{
 .progress{
     margin: 0;
     background-color: white;
+    position: fixed;
+    top: 0;
 }
 /*导航按钮*/
 .nav-btn{
@@ -97,10 +72,6 @@ body{
     position:fixed;
     cursor: Pointer;
 }
-.nav-btn img{
-    width: 100%;
-}
-
 /*导航*/
 .nav-list{
     width: 100%;
@@ -141,9 +112,9 @@ body{
 }
 
 .dropdown-ico{
-    width: 14px;
-    height: 14px;
-    margin: 18px;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
     float: right;
     position: relative;
 }
@@ -194,7 +165,7 @@ body{
 .nav-header{
     width: 100%;
     height:300px;
-    background-color: #707070;
+    background-color: #b5b5b5;
     position: relative;
     background-size: cover;
     background-repeat:no-repeat;
@@ -250,16 +221,24 @@ body{
     height:30px;
     margin: 5px;
     display: inline-block;
-    position: relative;
+    background-image: url(https://moumao.moumaobuchiyu.com/images/link/all.png);
+    background-size: cover;
 }
-.link-box-img{
-    width: 30px;
-    height:30px;
+.twitter{
+    background-position: 0 0;
 }
-.link-box-img img{
-    width: 100%;
+.github{
+    background-position: -119px 0;
 }
-
+.email{
+    background-position: -60px 0;
+}
+.weibo{
+    background-position: -30px 0;
+}
+.zhihu{
+    background-position: -89px 0;
+}
 .nav-search{
     width: 100%;
     height: 45px;
@@ -436,11 +415,11 @@ p.no-result {
     width: 100%;
     height: auto;
     min-height: 300px;
-    background-color: rgba(112, 112, 112, 0.7);
+    background-color: #b5b5b5;
     display: block;
     margin-top: 50px;
     transition: height .5s;
-    box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
     background-size: cover;
     background-repeat:no-repeat;
     background-position:center;
@@ -449,6 +428,7 @@ p.no-result {
     overflow: auto;
     color: white;
     font-size: 10px;
+    border-radius: 2px;
 }
 .recent-post-link{
     top:0;
@@ -545,23 +525,25 @@ p.no-result {
     color: white;
     line-height: 40px;
 }
+
 .post-header{
     width: 1050px;
     height: 400px;
-    background-color: white;
+    background-color: #b5b5b5;
     display: block;
     margin: 0 auto;
     margin-top: 100px;
     transition: all.5s;
-    box-shadow: 0 0 1px 2px rgba(181, 181, 181, 0.56);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
     background-size: cover;
     background-repeat:no-repeat;
     background-position:center;
     text-align: center;
     position: relative;
     overflow: auto;
+    border-radius: 2px;
 }
-#busuanzi_container_site_uv{
+#busuanzi_container_site_pv{
     color: white;
 }
 .post-header-title{

@@ -3,11 +3,10 @@
 language: en
 
 # Miscelaneous
-favicon: /source/favicon.ico
+favicon: https://moumao.moumaobuchiyu.com/source/favicon.ico
 
 # head-bg 头像背景图 
 headbg: https://moumao.moumaobuchiyu.com/images/head-bg.jpg
-
 # header 头像图 
 header: https://moumao.moumaobuchiyu.com/images/header.jpg
 
@@ -15,21 +14,22 @@ header: https://moumao.moumaobuchiyu.com/images/header.jpg
 post_header:
   img: https://moumao.moumaobuchiyu.com/images/coverpic.jpg
   about:
-    - "您好 欢迎使用Vateral主题"
-  url: "http://example.com"
+    - "你好啊 你可以叫我某猫"
+  url: "http://moumaobuchiyu.com"
 
 #链接
 sns:
-    github: "http://example.com"
-    weibo: "http://example.com"
-    zhihu: "http://example.com"
-    douban: "http://example.com"
+    github: "https://github.com/moumao"
+    weibo: "http://weibo.com/u/3168872804"
+    zhihu: "https://www.zhihu.com/people/mou-mao-75/activities"
+    twitter: "https://twitter.com/vaterial_moumao"
+    email: "1195358569@qq.com"
 
 #默认thumbnail图片的数目
 thumbnail: 19
 
 #访客
-visitor: false
+visitor: true
 
 #nav
 sidebar:
@@ -42,11 +42,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: false
+        use: true
     friends:
-        use: false
+        use: true
     photo:
-        use: false
+        use: true
 
 # Reading experience
 reading:
@@ -54,21 +54,20 @@ reading:
 
 #photo page
 photo:
-    name: "影集名称"
-    about: "影集简介"
+    name: "某猫の影集"
+    about: "希望 你会 喜欢我拍的照片"
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - https://cdn.bootcss.com/materialize/0.98.2/css/materialize.min.css
+  - https://moumao.moumaobuchiyu.com/css/materialize.min.css
   - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
-  - https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js
+  - https://moumao.moumaobuchiyu.com/js/jquery-3.1.1.min.js
   - https://moumao.moumaobuchiyu.com/js/materialize.min.js
   - https://moumao.moumaobuchiyu.com/js/lazyload.min.js
   - https://moumao.moumaobuchiyu.com/js/jquery.rotate.min.js
-  - //dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js
   - https://moumao.moumaobuchiyu.com/js/Vateral.min.js
 
 
