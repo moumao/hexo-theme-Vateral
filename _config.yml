@@ -6,13 +6,13 @@ language: en
 favicon: /source/favicon.ico
 
 # head-bg 头像背景图 
-headbg: /images/head-bg.jpg
+headbg: /images/header-bg.png
 # header 头像图 
-header: /images/header.jpg
+header: /images/header.png
 
 # post-header 标语部分
 post_header:
-  img: /images/coverpic.jpg
+  img: /images/coverpic.png
   about:
     - "你好啊 欢迎来到本站"
   url: "http://example.com"
