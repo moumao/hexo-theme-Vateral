@@ -160,6 +160,25 @@ up: true //文章是否需要置顶，如果不需要此属性可以不写
 thumbnail: //文章的图片url，如果不填则为默认图片
 ---
 ```
+### 代码高亮
+首先安装插件Hexo-Prism-Plugin
+```npm i -S hexo-prism-plugin ```
+在_config.yml中修改增加如下：
+```
+prism_plugin:
+  mode: 'preprocess'    # realtime：实时解析/preprocess：预处理
+  theme: 'default'	# 高亮皮肤 默认为default 可选有default,coy,dark,funky,okaidia,solarizedlight,tomorrow,twiligh
+  line_number: false    # default false 是否显示行数
+ ```
+ 注意要修改配置文件中的默认配置highlight：
+ ``` 
+ highlight:
+  enable: false
+  line_number: false
+  auto_detect: false
+  tab_replace:
+```
+重新生成she静态文件这样就有代码高亮了~
 
 至此配置基本结束
 
