@@ -58,9 +58,9 @@ friends页面：
 在 index.md 文件内写入如下内容即可。
 ```
 ---
-title: links
+title: friends
 date:
-layout: links
+layout: friends
 ---
 ```
 然后添加friends页面的数据
@@ -119,6 +119,13 @@ very_small_link:模糊加载时首先加载的模糊图片
 reading：设置自动生成摘要的字数
 
 photo:设置photo界面属性 ，name：相册名称 ，about：相册介绍
+
+### 文章置顶功能
+
+在需要置顶的文章头部加入如下即可置顶文章
+```
+up: true
+```
 
 ### 本地搜索
 
