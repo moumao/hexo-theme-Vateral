@@ -40,7 +40,7 @@ sidebar:
     categories:
         use: true
     tags:
-        use: false
+        use: true
     about:
         use: false
     friends:
@@ -55,7 +55,7 @@ reading:
 #photo page
 photo:
     name: "影集名称"
-    about: "影集简介"
+    about: "一段简介"
 
 # stylesheets loaded in the <head>
 stylesheets:
