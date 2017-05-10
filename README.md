@@ -178,7 +178,9 @@ prism_plugin:
   auto_detect: false
   tab_replace:
 ```
-重新生成she静态文件这样就有代码高亮了~
+重新生成静态文件这样就有代码高亮了~
+
+ps：欢迎反馈高亮代码样式问题
 
 至此配置基本结束
 
