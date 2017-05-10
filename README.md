@@ -32,7 +32,11 @@ sidebar：导航栏配置，如果需要某项，use为ture，反之为false
 
 *注：about friends photo要在hexo的文章目录下单独创建配置文件 
 
-about页面：
+reading：设置自动生成摘要的字数
+
+photo:设置photo界面属性 ，name：相册名称 ，about：相册介绍
+
+#### about页面：
 
 在 hexo 目录下的 source 文件夹内创建一个名为about的文件夹。
 
@@ -49,7 +53,7 @@ layout: about
 ---
 ```
 
-friends页面：
+#### friends页面：
 
 在 hexo 目录下的 source 文件夹内创建一个名为friends的文件夹。
 
@@ -65,7 +69,7 @@ layout: friends
 ```
 然后添加friends页面的数据
 
-同样在在 hexo 目录下的 source 文件夹内创建一个名为 _data 的文件夹。
+同样在在 hexo 目录下的 source 文件夹内创建一个名为 _data（禁止改名）的文件夹。
 
 然后在文件内创建一个名为 friends.yml 的文件。
 
@@ -78,7 +82,7 @@ name:
 
 如果想要添加多个友情链接，重复填写即可
 
-photo界面：
+#### photo界面：
 
 在 hexo 目录下的 source 文件夹内创建一个名为 photo的文件夹。
 
@@ -116,9 +120,7 @@ very_small_link:模糊加载时首先加载的模糊图片
 
 如果想要添加多个图片，重复填写即可
 
-reading：设置自动生成摘要的字数
-
-photo:设置photo界面属性 ，name：相册名称 ，about：相册介绍
+*注：_data文件夹不用重复创建
 
 ### 文章置顶功能
 
