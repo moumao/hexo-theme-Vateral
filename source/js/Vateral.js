@@ -4,6 +4,9 @@
         $(".progress").animate({
             "opacity":0
         })
+        $(body).css({
+            "overflow-x":"auto"
+        })
     };
     $(".post-fix").animate({
         "opacity":0
