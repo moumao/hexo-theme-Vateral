@@ -43,6 +43,7 @@ body{
     font-weight:300;
     overflow-x:hidden;
 }
+
 /*去除jquery默认样式*/
 .ui-loader-default{ display:none}
 .ui-mobile-viewport{ border:none;}

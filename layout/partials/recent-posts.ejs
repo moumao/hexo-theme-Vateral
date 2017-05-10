@@ -6,31 +6,6 @@
       <div class="post-hover" style="min-height: 150px;text-align: center;padding: 20px 20px 20px 20px;">
         <!--title-->
         <p class="post-title" style="line-height: 50px"><a href="<%=config.root + post.path%>" >[置顶]&nbsp<%=post.title%></a></p>
-
-       <!-- &lt;!&ndash;date&ndash;&gt;
-          <% if (post.date) { %>
-        <p class="post-time"><%=config.author%> &nbsp &nbsp 发布于:<time datetime="<%=post.date.toJSON()%>">
-                <%=date(post.date)%>
-          </time>
-        </p>
-          <% } %>
-
-        &lt;!&ndash;tags&ndash;&gt;
-        Tags:
-          <%- list_tags(post.tags, {
-            show_count: false,
-            style: 'list',
-            separator: ''
-          }) %>
-
-        &lt;!&ndash;分类&ndash;&gt;
-        分类:
-          <%- list_categories(post.categories, {
-            show_count: false,
-            style: 'list',
-            separator: ''
-          }) %>-->
-
       </div>
     </a>
   </div>
