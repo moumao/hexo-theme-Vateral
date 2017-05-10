@@ -639,7 +639,7 @@ p.no-result {
 }
 
 /*标签页*/
-.tag{
+.tags{
     width: 1050px;
     display: block;
     margin: 0 auto;
@@ -840,7 +840,13 @@ blockquote{
 .next-content{
     float: right;
 }
-
+pre{
+    background-color:#F1F1F1 !important;
+    padding: 15px;
+}
+pre>code>span{
+    background-color:#F1F1F1 !important;
+}
 /*友链界面*/
 .friends{
     width: 800px;

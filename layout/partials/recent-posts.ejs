@@ -53,20 +53,29 @@
           <% } %>
 
           <!--tags-->
-          Tags:
-          <%- list_tags(post.tags, {
-            show_count: false,
-            style: 'list',
-            separator: ''
-          }) %>
 
+          标签:
+            <% if (post.tags.length>0) { %>
+              <%- list_tags(post.tags, {
+                show_count: false,
+                style: 'list',
+                separator: ''
+              }) %>
+            <% }else{ %>
+              暂无标签
+            <% } %>
           <!--分类-->
+
           分类:
-            <%- list_categories(post.categories, {
-              show_count: false,
-              style: 'list',
-              separator: ''
-            }) %>
+            <% if (post.categories.length>0) { %>
+                <%- list_categories(post.categories, {
+                  show_count: false,
+                  style: 'list',
+                  separator: ''
+                }) %>
+            <% }else {%>
+                暂无分类
+            <% } %>
 
           <!--excerpt-->
           <div class="post-excerpt">
@@ -85,7 +94,6 @@
       </div>
     <%}%>
   <% }); %>
-
   <%-partial('partials/pagination')%>
 </div>
 
