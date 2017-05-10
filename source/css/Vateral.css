@@ -41,7 +41,9 @@ body{
     padding: 0;
     background-color: #E9EBEC;
     font-weight:300;
+    overflow-x:hidden;
 }
+
 /*去除jquery默认样式*/
 .ui-loader-default{ display:none}
 .ui-mobile-viewport{ border:none;}
@@ -85,6 +87,7 @@ body{
     -ms-user-select:none;
     user-select:none;
 }
+
 .side-nav li>a{
     padding: 0;
 }
@@ -221,7 +224,7 @@ body{
     height:30px;
     margin: 5px;
     display: inline-block;
-    background-image: url(../images/link/all.png);
+    background-image: url(https://moumao.moumaobuchiyu.com/images/link/all.png);
     background-size: cover;
 }
 .twitter{
@@ -345,6 +348,16 @@ p.no-result {
     margin: 45px 0 0 0 ;
     font-family: font-serif serif;
     border-bottom: 1px solid rgba(133, 133, 133, 0.89);
+}
+.side-nav::-webkit-scrollbar {
+    width:5px;
+}
+.side-nav::-webkit-scrollbar-track{
+    background-color: #d3d3d3;
+}
+.side-nav::-webkit-scrollbar-thumb{
+    background-color: rgba(157, 157, 157, 0.75);
+    border-radius:3px;
 }
 /*footer*/
 #bottom-outer{
@@ -627,7 +640,7 @@ p.no-result {
 }
 
 /*标签页*/
-.tag{
+.tags{
     width: 1050px;
     display: block;
     margin: 0 auto;
@@ -828,7 +841,13 @@ blockquote{
 .next-content{
     float: right;
 }
-
+pre{
+    background-color:#F1F1F1 !important;
+    padding: 15px;
+}
+pre>code>span{
+    background-color:#F1F1F1 !important;
+}
 /*友链界面*/
 .friends{
     width: 800px;
