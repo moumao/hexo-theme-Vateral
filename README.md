@@ -36,6 +36,8 @@ reading：设置自动生成摘要的字数
 
 photo:设置photo界面属性 ，name：相册名称 ，about：相册介绍
 
+*注：如果您全站开启了https或者http2服务，请将_config.yml文件里的cdn资源（js，css）改为https的cdn，否则资源无法正常加载
+
 #### about页面：
 
 在 hexo 目录下的 source 文件夹内创建一个名为about的文件夹。
