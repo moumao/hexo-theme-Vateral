@@ -4,7 +4,7 @@
         $(".progress").animate({
             "opacity":0
         })
-        $(body).css({
+        $("body").css({
             "overflow-x":"auto"
         })
     };

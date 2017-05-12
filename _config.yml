@@ -29,7 +29,7 @@ sns:
 thumbnail: 19
 
 #访客
-visitor: true
+visitor: false
 
 #nav
 sidebar:
@@ -60,7 +60,7 @@ photo:
 # stylesheets loaded in the <head>
 stylesheets:
   - https://moumao.moumaobuchiyu.com/css/materialize.min.css
-  - /css/Vateral.min.css
+  - https://moumao.moumaobuchiyu.com/css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
