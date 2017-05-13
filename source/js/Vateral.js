@@ -128,7 +128,6 @@
 
 //回到顶部
 (function () {
-
         $("#top-button").click(function () {
             $('html,body').animate({
                 scrollTop:0
