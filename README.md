@@ -1,8 +1,10 @@
 ![截图](https://www.moumaobuchiyu.com/images/jietu.png)
 
+![截图](https://www.moumaobuchiyu.com/images/jietu2.png)
+
 ## Vateral
 
-hexo主题 vateral
+hexo主题---Vateral
 
 示例网站：[某猫のBlog](https://www.moumaobuchiyu.com)
 
