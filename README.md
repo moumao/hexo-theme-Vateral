@@ -1,6 +1,6 @@
 ![截图](https://www.moumaobuchiyu.com/images/jietu.png)
 
-![截图](https://www.moumaobuchiyu.com/images/jietu2.png)
+![截图](https://www.moumaobuchiyu.com/images/jietu4.png)
 
 ![截图](https://www.moumaobuchiyu.com/images/jietu3.png)
 
