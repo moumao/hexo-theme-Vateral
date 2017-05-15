@@ -1,0 +1,29 @@
+<div class="nav-header" <% if(theme.headbg) { %> style="background-image: url(<%=theme.headbg%>)"<%}%>>
+    <div class="header-box"><img src="<%=theme.header%>" ondragstart="return false;"></div>
+    <p><%=config.author%></p>
+    <div class="nav-link">
+        <% if(theme.sns.twitter) { %>
+        <a href="<%= theme.sns.twitter %>" target="_blank"> <div class="link-box twitter"></div></a>
+        <% } %>
+        <% if(theme.sns.github) { %>
+        <a  href="<%= theme.sns.github %>" target="_blank"><div class="link-box github"></div></a>
+        <% } %>
+        <% if(theme.sns.email) { %>
+        <a href="mailto:<%= theme.sns.email %>"><div class="link-box email"></div></a>
+        <% } %>
+        <% if(theme.sns.weibo) { %>
+        <a href="<%= theme.sns.weibo %>" target="_blank"><div class="link-box weibo"></div></a>
+        <% } %>
+        <% if(theme.sns.zhihu) { %>
+        <a href="<%= theme.sns.zhihu %>" target="_blank"> <div class="link-box zhihu"></div></a>
+        <% } %>
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>

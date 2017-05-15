@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/MaterialIcons-Regular.eot);
-    src: url(../fonts/MaterialIcons-Regular.woff2) format('woff2'), url(../fonts/MaterialIcons-Regular.woff) format('woff'), url(../fonts/MaterialIcons-Regular.ttf) format('truetype')
-}
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -725,7 +718,8 @@ p.no-result {
     display: inline-block;
 }
 .post-page-content p img{
-    width: 100%;
+    width: auto;
+    max-width:100%;
 }
 .post-page-content h1{
     font-size: 3.3rem;
@@ -820,7 +814,8 @@ blockquote{
     cursor: Pointer;
 }
 .post-back img{
-    width: 100%;
+    width: auto;
+    max-width:100%;
 }
 .post-nav{
     width: 1050px;
@@ -888,7 +883,7 @@ pre>code>span{
     #archive{
         width: 96%;
     }
-    .tag{
+    .tags{
         width: 96%;
     }
     #post{

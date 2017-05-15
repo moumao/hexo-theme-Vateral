@@ -4,7 +4,7 @@
         $(".progress").animate({
             "opacity":0
         })
-        $(body).css({
+        $("body").css({
             "overflow-x":"auto"
         })
     };
@@ -128,7 +128,6 @@
 
 //回到顶部
 (function () {
-
         $("#top-button").click(function () {
             $('html,body').animate({
                 scrollTop:0

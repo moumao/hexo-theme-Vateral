@@ -1,27 +1,5 @@
 <% if( (page.current === 1) && (is_home()) ) { %>
-<div class="post-header" style="background-image:url(<%= theme.post_header.img %>)">
-    <a href="<%=theme.post_header.url%>">
-        <div class="post-header-title">
-            <p style="">
-                <% if(theme.post_header.about) { %>
-                <% if(Array.isArray(theme.post_header.about)) { %>
-                <%- theme.post_header.about.join('</p><p>') %>
-                <% } else { %>
-                <%- theme.post_header.about %>
-                <% } %>
-                <% } %>
-                <br>
-                <% if(theme.visitor) { %>
-                <span id="busuanzi_container_site_pv" style="color: white;font-size:13px;line-height: 13px">
-                你是第<span id="busuanzi_value_site_pv"></span>位小伙伴来到本站
-                </span>
-                <% } %>
-            </p>
-
-        </div>
-
-    </a>
-</div>
+<%-partial('partials/recent-head')%>
 <% } %>
 
 <%-partial('partials/recent-posts')%>

@@ -2,6 +2,11 @@
 # html lang
 language: en
 
+# seo优化
+seo:
+ keywords: "网站关键字"
+ description: "网站简介"
+
 # Miscelaneous
 favicon: /source/favicon.ico
 
@@ -16,6 +21,11 @@ post_header:
   about:
     - "你好啊 欢迎来到本站"
   url: "http://example.com"
+  visitor_front: "您是第"
+  visitor_back: "位访客"
+
+#访客
+visitor: true
 
 #链接
 sns:
@@ -28,9 +38,6 @@ sns:
 #默认thumbnail图片的数目
 thumbnail: 19
 
-#访客
-visitor: false
-
 #nav
 sidebar:
     homepage:
@@ -42,11 +49,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: false
+        use: true
     friends:
-        use: false
+        use: true
     photo:
-        use: false
+        use: true
 
 # Reading experience
 reading:
@@ -59,14 +66,14 @@ photo:
 
 # stylesheets loaded in the <head>
 stylesheets:
-  - http://cdn.bootcss.com/materialize/0.98.2/css/materialize.min.css
+  - /css/materialize.min.css
   - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
-  - http://cdn.bootcss.com/jquery/3.2.1/jquery.min.js
-  - http://cdn.bootcss.com/materialize/0.98.2/js/materialize.min.js
-  - http://cdn.bootcss.com/jquery_lazyload/1.9.6/jquery.lazyload.min.js
+  - /js/jquery-3.1.1.min.js
+  - /js/materialize.min.js
+  - /js/lazyload.min.js
   - /js/jquery.rotate.min.js
   - /js/Vateral.min.js
 
