@@ -16,6 +16,11 @@ post_header:
   about:
     - "你好啊 你可以叫我某猫"
   url: "http://moumaobuchiyu.com"
+  visitor_front: "您是第"
+  visitor_back: "位访客"
+
+#访客
+visitor: false
 
 #链接
 sns:
@@ -28,8 +33,7 @@ sns:
 #默认thumbnail图片的数目
 thumbnail: 19
 
-#访客
-visitor: false
+
 
 #nav
 sidebar:
