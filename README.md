@@ -1,4 +1,4 @@
-![截图](https://moumao.moumaobuchiyu.com/images/jietu.png)
+![截图](https://www.moumaobuchiyu.com/images/jietu.png)
 
 ## Vateral
 
