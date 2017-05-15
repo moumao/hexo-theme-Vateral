@@ -2,6 +2,8 @@
 
 ![截图](https://www.moumaobuchiyu.com/images/jietu2.png)
 
+![截图](https://www.moumaobuchiyu.com/images/jietu3.png)
+
 ## Vateral
 
 hexo主题---Vateral
