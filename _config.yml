@@ -75,6 +75,6 @@ scripts:
   - /js/materialize.min.js
   - /js/lazyload.min.js
   - /js/jquery.rotate.min.js
-  - /js/Vateral.js
+  - /js/Vateral.min.js
 
 
