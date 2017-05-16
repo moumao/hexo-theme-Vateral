@@ -1,3 +1,6 @@
+![即将在下一个版本中推出的内嵌欢迎页](https://www.moumaobuchiyu.com/images/jietu5.png)
+*注：即将在下一个版本中推出的内嵌欢迎页
+
 ![截图](https://www.moumaobuchiyu.com/images/jietu.png)
 
 ![截图](https://www.moumaobuchiyu.com/images/jietu4.png)
