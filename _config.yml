@@ -19,13 +19,13 @@ header: /images/header.png
 post_header:
   img: /images/coverpic.png
   about:
-    - "你好啊 欢迎来到本站"
+    - "你好 欢迎来到本站"
   url: "http://example.com"
-  visitor_front: "您是第"
+  visitor_front: "你是第"
   visitor_back: "位访客"
 
 #访客
-visitor: true
+visitor: false
 
 #链接
 sns:
@@ -49,15 +49,15 @@ sidebar:
     tags:
         use: true
     about:
-        use: true
+        use: fasle
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
-    entry_excerpt: 100
+    entry_excerpt: 80
 
 #photo page
 photo:
