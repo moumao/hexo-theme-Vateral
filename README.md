@@ -24,13 +24,15 @@ hexo主题---Vateral
 
 找到主题里的_config.yml文件
 
+seo：设置seo优化，keywords为网站搜索的关键字，description为网站搜索的网站介绍
+
 favicon：设置icon图标
 
 headbg：设置左侧抽屉中头像部分的背景图
 
 header：设置头像
 
-post_header：设置首页的标语部分 img：标语背景图 about：标语 url：为标语添加一个链接
+post_header：设置首页的标语部分，img：标语背景图，about：标语，url：为标语添加一个链接
 
 sns：添加社交账号链接，没有默认不填
 
@@ -42,7 +44,7 @@ reading：设置自动生成摘要的字数
 
 photo:设置photo界面属性 ，name：相册名称 ，about：相册介绍
 
-*注：如果您全站开启了https或者http2服务，请将_config.yml文件里的cdn资源（js，css）改为https的cdn，否则资源无法正常加载；例如使用githubPage就需要将cdn资源改为https服务
+
 
 #### about页面：
 
@@ -151,6 +153,7 @@ search:
 ### 计数统计
 
 在主题配置文件中visitor属性设置为true即可开启全站的计数统计
+在post_header属性中，设置visitor_front的值为访客数目的前缀，设置visitor_back的值为访客数目的后缀
 
 ### 文章配置
 
