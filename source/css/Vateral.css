@@ -444,6 +444,16 @@ p.no-result {
     width: 100%;
     min-height: 300px;
 }
+.recent-post-item-up{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.recent-post-item-up img{
+    width: 100%;
+}
 .post-hover{
     width: 100%;
     height: auto;
@@ -549,6 +559,7 @@ p.no-result {
     overflow: auto;
     border-radius: 2px;
 }
+
 #busuanzi_container_site_pv{
     color: white;
 }
