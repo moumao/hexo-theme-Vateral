@@ -2,6 +2,7 @@
 
 ![](https://www.moumaobuchiyu.com/images/welcomePage.png)
 
+从PC端到移动端，均提供支持
 ![](https://www.moumaobuchiyu.com/images/all.jpg)
 
 ## Vateral
