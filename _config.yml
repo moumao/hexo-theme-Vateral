@@ -13,7 +13,7 @@ favicon: /source/favicon.ico
 # head-bg 头像背景图 
 headbg: /images/header-bg.png
 # header 头像图 
-header: /images/header.png
+header: /images/header.jpg
 
 # post-header 标语部分
 post_header:
@@ -25,7 +25,7 @@ post_header:
   visitor_back: "位访客"
 
 #访客
-visitor: false
+visitor: true
 
 #链接
 sns:
@@ -49,11 +49,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: fasle
+        use: true
     friends:
-        use: false
+        use: true
     photo:
-        use: false
+        use: true
 
 # Reading experience
 reading:
