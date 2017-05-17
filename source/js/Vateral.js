@@ -275,7 +275,11 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
 (function () {
    var links=$(".post-author-link");
    var button=$(".post-author-button");
+<<<<<<< Updated upstream
    button.click(function (){
+=======
+   button.click(()=>{
+>>>>>>> Stashed changes
        if(links.css("display")=== "none"){
            links.css({
                "display":"block"
@@ -287,7 +291,11 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
            links.animate({
                "opacity":0
            },500)
+<<<<<<< Updated upstream
            setTimeout(function (){
+=======
+           setTimeout(()=>{
+>>>>>>> Stashed changes
                links.css({
                    "display":"none",
                    "right":"100px"

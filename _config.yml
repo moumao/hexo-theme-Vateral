@@ -25,7 +25,7 @@ post_header:
   visitor_back: "位访客"
 
 #访客
-visitor: true
+visitor: false
 
 #链接
 sns:
@@ -49,11 +49,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: true
+        use: false
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
