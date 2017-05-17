@@ -1,6 +1,6 @@
 *注：即将在下一个版本中推出的内嵌欢迎页
 
-![](https://www.moumaobuchiyu.com/images/welcomePage.png)
+![](https://www.moumaobuchiyu.com/images/all.jpg)
 
 ![](https://www.moumaobuchiyu.com/images/jietu.png)
 
