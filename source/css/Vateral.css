@@ -22,6 +22,11 @@
 
     /* Support for IE. */
     font-feature-settings: 'liga';
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
 }
 nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
     display: block;
@@ -208,6 +213,10 @@ body{
     margin-top: 150px;
     text-align: center;
     display: inline-block;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
 }
 #content{
     cursor: Pointer;
@@ -246,13 +255,14 @@ body{
     z-index: 99;
 }
 .nav-search input{
-    width: 96.5%;
+    width: 96%;
     color: white;
     padding-left: 10px;
     border-bottom: 0;
     z-index: 100;
 }
 .nav-search form{
+    width: 100%;
     height: 45px;
 }
 .nav-search-img{
@@ -279,9 +289,6 @@ body{
     text-align: left;
     word-break: break-all;
     background-color: white;
-    padding-left: 8px;
-    padding-right: 8px;
-
 }
 
 #local-search-result ul.search-result-list li:hover {
@@ -293,13 +300,14 @@ body{
     height: 80px;
     position: relative;
     border-bottom: 1px solid rgba(133, 133, 133, 0.89);
+    padding-left: 10px;
 
 }
 #local-search-result li:last-child{
     border-bottom: 0;
 }
-#local-search-result .search-result-list li:hover {
-
+#local-search-result a.search-result-title:hover {
+  background-color: rgba(255, 255, 255, 0);
 }
 
 /*匹配的标题*/
@@ -313,6 +321,7 @@ body{
 
 /*搜索预览段落*/
 #local-search-result p.search-result {
+    padding-left: 10px;
     text-align: left;
     width: 100%;
     line-height: 40px;
@@ -545,7 +554,9 @@ p.no-result {
     color: white;
     line-height: 40px;
 }
-
+#post{
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
+}
 .post-header{
     width: 1050px;
     height: 400px;
@@ -554,16 +565,88 @@ p.no-result {
     margin: 0 auto;
     margin-top: 100px;
     transition: all.5s;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
     background-size: cover;
     background-repeat:no-repeat;
     background-position:center;
     text-align: center;
     position: relative;
     overflow: auto;
-    border-radius: 2px;
 }
-
+.post-author{
+    width: 1050px;
+    height: 60px;
+    background-color: white;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+    transition: all.5s;
+}
+.post-author-img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 10px;
+    float: left;
+    background-color: #b5b5b5;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all.5s;
+}
+.post-author-img img{
+    width: 100%;
+}
+.post-author-name{
+    margin: 0;
+    display: inline-block;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all.5s;
+}
+.post-author-button{
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 20px;
+    float: right;
+    transition: all.5s;
+    cursor: pointer;
+}
+.post-author-link{
+    position: absolute;
+    right: 100px;
+    top: 0;
+    height: auto;
+    width: auto;
+    float: right;
+    padding: 15px 0 15px 0;
+    opacity: 0;
+    display: none;
+}
+.post-author-link ul{
+    margin: 0;
+}
+.post-author-link p{
+    display: inline-block;
+    margin: 0;
+    line-height: 30px;
+    float: left;
+    font-size: 13px;
+}
+.post-author-link ul li{
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    line-height: 30px;
+    text-align: center;
+    transition: background-color .5s;
+    font-size: 13px;
+    float: left;
+}
+.post-author-link ul li a{
+    color: #393939;
+}
+.post-author-link ul li:hover{
+    background-color: rgba(219, 219, 219, 0.9);
+}
 #busuanzi_container_site_pv{
     color: white;
 }
@@ -912,6 +995,9 @@ pre>code>span{
     .post-header{
         width: 96%;
     }
+    .post-author{
+        width: 96%;
+    }
     .post-page-title h2{
         font-size: 25px;
     }
@@ -969,6 +1055,33 @@ pre>code>span{
         height: 300px;
         transition: all .5s;
         margin: 0;
+    }
+    .post-author{
+        width: 100%;
+        margin-top: -40px;
+        background-color: rgba(255, 255, 255, 0);
+        height: 80px;
+    }
+    .post-author-img{
+        width: 70px;
+        height: 70px;
+        border: 2px solid white;
+        margin: 5px 15px 5px 5px;
+        border-radius: 0;
+        float: right;
+    }
+    .post-author-name{
+        line-height: 40px;
+        margin-right: 10px;
+        color: white;
+        float: right;
+        text-shadow: 0 0 10px  #393939;
+    }
+    .post-header-title{
+        bottom: 100px;
+    }
+    .post-author-button,.post-author-link{
+        display: none;
     }
     .post-header p{
         margin-top: 240px;

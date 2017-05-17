@@ -19,9 +19,6 @@
             .css({
                 "display":"none"
             })
-       /* $(".post-fix").css({
-            "display":"none"
-        })*/
     },1000)
 })();
 
@@ -74,41 +71,20 @@
         });
     }
 })();
+
 (function () {
-    var weight=$("body").width();
-    if(weight<=350){
-        (function () {
-            $('.button-collapse').sideNav({
-                    menuWidth: 250, // Default is 240
-                    edge: 'left', // Choose the horizontal origin
-                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                    draggable: false // Choose whether you can drag to open on touch screens
-                }
-            );
-            $(".nav-btn").click(function () {
-                $('.button-collapse').sideNav("show");
+    $('.button-collapse').sideNav({
+            menuWidth: 250, // Default is 240
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: false // Choose whether you can drag to open on touch screens
+        }
+    );
+    $(".nav-btn").click(function () {
+        $('.button-collapse').sideNav("show");
 
-            })
-        })();
-    }else {
-        (function () {
-            $('.button-collapse').sideNav({
-                    menuWidth: 280, // Default is 240
-                    edge: 'left', // Choose the horizontal origin
-                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                    draggable: false // Choose whether you can drag to open on touch screens
-                }
-            );
-            $(".nav-btn").click(function () {
-                $('.button-collapse').sideNav("show");
-
-            })
-        })();
-    }
+    })
 })();
-
-//侧边栏初始化以及绑定事件
-
 
 //侧边栏下拉列表绑定事件
 (function () {
@@ -213,7 +189,7 @@ var searchFunc = function(path, search_id, content_id) {
                     }
                     // show search results
                     if (isMatch) {
-                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>" + data_title +"</a>";
+                        str += "<li><a href='"+ data_url +"' class='search-result-title' target='_blank'>" + data_title ;
                         var content = data.content.trim().replace(/<[^>]+>/g,"");
                         if (first_occur >= 0) {
                             // cut out characters
@@ -234,7 +210,7 @@ var searchFunc = function(path, search_id, content_id) {
                                 var regS = new RegExp(keyword, "gi");
                                 match_content = match_content.replace(regS, "<em class=\"search-keyword\">"+keyword+"</em>");
                             });
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"+"</a>"
                         }
                     }
                 });
@@ -296,9 +272,32 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
         return false;
     });
 })();
-
+(function () {
+   var links=$(".post-author-link");
+   var button=$(".post-author-button");
+   button.click(function (){
+       if(links.css("display")=== "none"){
+           links.css({
+               "display":"block"
+           }).animate({
+               "right":"60px",
+               "opacity":1
+           },500)
+       }else {
+           links.animate({
+               "opacity":0
+           },500)
+           setTimeout(function (){
+               links.css({
+                   "display":"none",
+                   "right":"100px"
+               })
+           },500)
+       }
+   })
+})();
 $(function(){
     $(".lazy").lazyload({
         effect : "fadeIn"
     });
-})
+});

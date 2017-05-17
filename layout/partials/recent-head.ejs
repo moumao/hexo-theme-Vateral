@@ -1,3 +1,4 @@
+
 <div class="post-header" style="background-image:url(<%= theme.post_header.img %>)">
     <a href="<%=theme.post_header.url%>">
         <div class="post-header-title">
@@ -18,4 +19,15 @@
             </p>
         </div>
     </a>
+</div>
+<div class="post-author">
+    <div class="post-author-img"><img src="<%=theme.header%>" ondragstart="return false;"></div>
+    <p class="post-author-name"><%=config.author%></p>
+    <div class="post-author-button"  target="_self"><i class="material-icons"  target="_self" style="font-size: 20px">share</i></div>
+    <div class="post-author-link"><ul>
+            <p>分享到：</p>
+            <li><a href="http://v.t.sina.com.cn/share/share.php?url=<%=config.url%>&title=<%=config.title%>" target="_blank">新浪微博</a></li>
+            <li><a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%=config.url%>" target="_blank">QQ空间</a></li>
+            <li><a href="http://connect.qq.com/widget/shareqq/index.html?title=qqhaoyou&url=<%=config.url%> &desc= <%=config.title%>" target="_blank">QQ好友</a></li>
+        </ul></div>
 </div>
