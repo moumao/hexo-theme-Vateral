@@ -1,3 +1,33 @@
 <a  id="top-button" onfocus="this.blur();"><div class="up"><i class="material-icons material-up">vertical_align_top</i></div></a>
-Copyright ©  2017  <%=config.title%><br>
-Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a>
+<div id="beginTime" style="position: absolute;opacity: 0;z-index: 0"><%=theme.begin_time%></div>
+<% if (theme.time){%>
+<p >Copyright ©  2017  <%=config.title%></p>
+<p >Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> & Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+<p style="font-size: 2px" id="footer-times"></p>
+<script>
+    var beginTime=document.getElementById("beginTime").innerHTML
+
+    function show_date_time(){
+        var span=document.getElementById("footer-times")
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay=new Date(beginTime);//初始日期
+        today=new Date();
+        timeold=(today.getTime()-BirthDay.getTime());
+        sectimeold=timeold/1000
+        secondsold=Math.floor(sectimeold);
+        msPerDay=24*60*60*1000
+        e_daysold=timeold/msPerDay
+        daysold=Math.floor(e_daysold);
+        e_hrsold=(e_daysold-daysold)*24;
+        hrsold=Math.floor(e_hrsold);
+        e_minsold=(e_hrsold-hrsold)*60;
+        minsold=Math.floor((e_hrsold-hrsold)*60);
+        seconds=Math.floor((e_minsold-minsold)*60);
+        span.innerHTML="本站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+    }
+    show_date_time();
+</script>
+<%}else{%>
+<p style="line-height: 45px">Copyright ©  2017  <%=config.title%></p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+<%}%>

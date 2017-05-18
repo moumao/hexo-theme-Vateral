@@ -364,7 +364,7 @@ p.no-result {
 /*footer*/
 #bottom-outer{
     width: 100%;
-    height:130px;
+    height:140px;
     display: block;
     background-color: white;
     box-shadow: 0 0 3px 3px rgba(199, 199, 199, 0.58);
@@ -376,12 +376,15 @@ p.no-result {
 #bottom-inner{
     text-align: center;
     width: auto;
-    height: 80px;
+    height: 90px;
     display: block;
     margin: 0 auto;
-    line-height: 40px;
+    line-height: 30px;
     color: rgba(101, 101, 101, 0.58);
     position: relative;
+}
+#bottom-inner p{
+    margin: 0;
 }
 .fixed-bottom {
     position: absolute;
@@ -392,7 +395,6 @@ p.no-result {
     text-decoration: none;
     color: black;
 }
-
 /*返回顶部按钮*/
 .up{
     width: 30px;
@@ -400,8 +402,7 @@ p.no-result {
     display: block;
     position: absolute;
     right: 45px;
-    top:20px;
-
+    top:30px;
     cursor: Pointer;
 }
 .material-up{
