@@ -156,6 +156,10 @@ search:
 在主题配置文件中visitor属性设置为true即可开启全站的计数统计
 在post_header属性中，设置visitor_front的值为访客数目的前缀，设置visitor_back的值为访客数目的后缀
 
+### 博客运行时间统计
+
+在_config.yml文件中的time属性设置为ture，并且设置begin_time属性为开始计时的时间
+
 ### 文章配置
 
 使用hexo命令生成一片新文章后，需要在md文件中进行如下配置
