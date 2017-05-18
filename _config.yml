@@ -25,7 +25,12 @@ post_header:
   visitor_back: "位访客"
 
 #访客
-visitor: true
+visitor: false
+
+#博客时间统计
+time: false
+#博客开启的时间 格式为：月/日/年 几点:几分:几秒
+begin_time: 1/28/2017 00:00:00
 
 #链接
 sns:
@@ -49,11 +54,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: true
+        use: false
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
