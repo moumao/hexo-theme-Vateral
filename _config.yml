@@ -13,7 +13,7 @@ favicon: /source/favicon.ico
 # head-bg 头像背景图 
 headbg: /images/header-bg.png
 # header 头像图 
-header: /images/header.jpg
+header: /images/header.png
 
 # post-header 标语部分
 post_header:
@@ -30,7 +30,7 @@ visitor: false
 #博客时间统计
 time: false
 #博客开启的时间 格式为：月/日/年 几点:几分:几秒
-begin_time: 1/28/2017 00:00:00
+begin_time: 1/1/2017 00:00:00
 
 #链接
 sns:
@@ -68,6 +68,11 @@ reading:
 photo:
     name: "影集名称"
     about: "一段简介"
+
+#评论
+comment:
+    use: false
+    shortname: example.disqus.com
 
 # stylesheets loaded in the <head>
 stylesheets:
