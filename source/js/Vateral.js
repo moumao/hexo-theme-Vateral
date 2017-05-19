@@ -288,6 +288,7 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
                "opacity":0
            },500)
            setTimeout(function (){
+
                links.css({
                    "display":"none",
                    "right":"100px"

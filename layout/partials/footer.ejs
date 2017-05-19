@@ -1,12 +1,11 @@
 <a  id="top-button" onfocus="this.blur();"><div class="up"><i class="material-icons material-up">vertical_align_top</i></div></a>
-<div id="beginTime" style="position: absolute;opacity: 0;z-index: 0"><%=theme.begin_time%></div>
+
 <% if (theme.time){%>
 <p >Copyright ©  2017  <%=config.title%></p>
 <p >Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> & Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
-<p style="font-size: 2px" id="footer-times"></p>
+<p style="font-size: 10px" id="footer-times" data-time="<%=theme.begin_time%>"></p>
 <script>
-    var beginTime=document.getElementById("beginTime").innerHTML
-
+    var beginTime=document.getElementById("footer-times").dataset.time
     function show_date_time(){
         var span=document.getElementById("footer-times")
         window.setTimeout("show_date_time()", 1000);
