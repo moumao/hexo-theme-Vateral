@@ -160,6 +160,18 @@ search:
 
 在_config.yml文件中的time属性设置为ture，并且设置begin_time属性为开始计时的时间
 
+### 评论系统
+*注：本主题暂时仅支持disqus，所以需要评论功能的话快翻墙注册一个账号吧~
+
+在_config.yml文件中的comment属性，use设置为true，然后将shortname属性设置为你的disqus域名
+格式如下：
+```
+comment:
+    use: true
+    shortname: yourname.disqus.com
+```
+
+如果不想使用则把use值设置为false即可
 ### 文章配置
 
 使用hexo命令生成一片新文章后，需要在md文件中进行如下配置
