@@ -302,3 +302,48 @@ $(function(){
         effect : "fadeIn"
     });
 });
+
+//节流函数
+var throttle = function (fn, delay, atleast) {
+    var timer = null;
+    var previous = null;
+
+    return function () {
+        var now = +new Date();
+
+        if ( !previous ) previous = now;
+        if ( atleast && now - previous > atleast ) {
+            fn();
+            // 重置上一次开始时间为本次结束时间
+            previous = now;
+            clearTimeout(timer);
+        } else {
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                fn();
+                previous = null;
+            }, delay);
+        }
+    }
+};
+
+(function () {
+    var up=$(".up");
+    window.onscroll = function () {
+        var top=$(window).scrollTop(),
+            height=$(window).height(),
+            botton =$(document).height() - top-height;
+        if (top>=height-80){
+            if (botton<=90){
+                up.removeClass("upinbody");
+                up.addClass("upinfoot");
+            }else {
+                up.removeClass("upinfoot");
+                up.addClass("upinbody");
+            }
+            up.fadeIn(500);
+        }else if (top<=height-80){
+            up.fadeOut(500);
+        }
+    }
+})();
