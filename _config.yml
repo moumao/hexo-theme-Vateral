@@ -72,7 +72,7 @@ photo:
 #评论
 comment:
     use: false
-    shortname: example.disqus.com
+    shortname: XXX.disqus.com
 
 # stylesheets loaded in the <head>
 stylesheets:
@@ -83,8 +83,7 @@ stylesheets:
 scripts:
   - /js/jquery-3.1.1.min.js
   - /js/materialize.min.js
-  - /js/lazyload.min.js
-  - /js/jquery.rotate.min.js
-  - /js/Vateral.min.js
+  - /js/main.min.js
+
 
 
