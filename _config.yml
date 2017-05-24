@@ -54,11 +54,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: false
+        use: true
     friends:
-        use: false
+        use: true
     photo:
-        use: false
+        use: true
 
 # Reading experience
 reading:
@@ -77,13 +77,19 @@ comment:
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/materialize.min.css
+  - /css/nprogress.min.css
   - /css/Vateral.min.css
 
 # scripts loaded in the end of the body
 scripts:
   - /js/jquery-3.1.1.min.js
   - /js/materialize.min.js
+  - /js/jquery.pjax.min.js
+  - /js/nprogress.min.js
   - /js/main.min.js
+  #- /js/lazyload.min.js
+  #- /js/jquery.rotate.min.js
+  #- /js/Vateral.min.js
 
 
 

@@ -61,6 +61,13 @@ body{
     position: fixed;
     top: 0;
 }
+#nprogress .bar{
+    background-color: #26A69A;
+}
+#nprogress .spinner-icon{
+    border-top-color:#26A69A;border-left-color:#26A69A;
+}
+
 /*导航按钮*/
 .nav-btn{
     width: 30px;

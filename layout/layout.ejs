@@ -38,10 +38,7 @@
     </style>
 </head>
 <body>
-<div class="progress" >
-    <div class="indeterminate"></div>
-</div>
-<a data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><i class="material-icons">list</i></div></a>
+<a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><i class="material-icons">list</i></div></a>
 <div id="menu-outer">
   <div id="menu-inner">
       <%-partial('partials/nav-left')%>
@@ -69,15 +66,13 @@
 <script type="text/javascript" src="/js/exif.js"></script>
 <script type="text/javascript" src="/js/photopage.js"></script>
 <script type="text/javascript">
-
     var boxes=$('.portfolio-item');
     boxes.magnificPopup({
-          type: 'image',
-          gallery:{
-              enabled:true
-          }
+        type: 'image',
+        gallery:{
+            enabled:true
+        }
     });
-
 </script>
 <% }%>
 
@@ -87,6 +82,34 @@
 <script src="<%=url%>"></script>
 <% }); %>
 <% } %>
+
+<script>
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000})
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+     .on('pjax:end', function() {
+         dowmdiv();
+         $(".lazy").lazyload({
+             effect : "fadeIn"
+         });
+         $(".post-back").click(function () {
+             window.history.back();
+         });
+         var $root = $('html, body');
+         $('.post-toc-link').click(function() {
+             $root.animate({
+                 scrollTop: $( $.attr(this, 'href') ).offset().top
+             }, 500);
+             return false;
+         });
+         $(".post-toc-btn").click(function () {
+             if($(".post-toc").exist()){
+                 $(".post-toc-box").fadeToggle()
+             }else {
+                 $(".post-toc-none").fadeToggle()
+             }
+         })
+     })
+</script>
 
 <% if(theme.visitor) { %>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
