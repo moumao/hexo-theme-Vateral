@@ -21,21 +21,6 @@
     <link href="/css/magnific-popup.css" rel="stylesheet">
     <link href="/css/templatemo_style.css" rel="stylesheet" type="text/css">
     <% }%>
-    <style type="text/css">
-        html{
-            font-family: sans-serif;
-            font-weight: 300;
-        }
-        @font-face {
-            font-family: 'Material Icons';
-            font-style: normal;
-            font-weight: 400;
-            src: url(/fonts/MaterialIcons-Regular.eot);
-            src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-            url(/fonts/MaterialIcons-Regular.woff) format('woff'),
-            url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
-        }
-    </style>
 </head>
 <body>
 <a href="#" data-activates="slide-out"  class="button-collapse"><div class="nav-btn"><i class="material-icons">list</i></div></a>
@@ -106,6 +91,29 @@
                  $(".post-toc-box").fadeToggle()
              }else {
                  $(".post-toc-none").fadeToggle()
+             }
+         })
+         var links=$(".post-author-link");
+         var button=$(".post-author-button");
+         button.click(function (){
+             if(links.css("display")=== "none"){
+                 links.css({
+                     "display":"block"
+                 }).animate({
+                     "right":"60px",
+                     "opacity":1
+                 },500)
+             }else {
+                 links.animate({
+                     "opacity":0
+                 },500)
+                 setTimeout(function (){
+
+                     links.css({
+                         "display":"none",
+                         "right":"100px"
+                     })
+                 },500)
              }
          })
      })
