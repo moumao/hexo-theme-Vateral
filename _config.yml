@@ -24,6 +24,10 @@ post_header:
   visitor_front: "你是第"
   visitor_back: "位访客"
 
+# 主配色
+blendent:
+  main: "#26A69A"
+
 #访客
 visitor: false
 
@@ -54,11 +58,11 @@ sidebar:
     tags:
         use: true
     about:
-        use: true
+        use: false
     friends:
-        use: true
+        use: false
     photo:
-        use: true
+        use: false
 
 # Reading experience
 reading:
@@ -78,7 +82,7 @@ comment:
 stylesheets:
   - /css/materialize.min.css
   #- /css/nprogress.min.css
-  #- /css/Vateral.min.css
+  #- /css/Vateral.css
   - /css/main.min.css
 
 # scripts loaded in the end of the body
@@ -89,7 +93,7 @@ scripts:
   #- /js/nprogress.min.js
   #- /js/lazyload.min.js
   #- /js/jquery.rotate.min.js
-  #- /js/Vateral.js
+  #- /js/Vateral.min.js
   - /js/main.min.js
 
 

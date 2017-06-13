@@ -1,5 +1,5 @@
 <article id="post">
-  <div class="post-page-title" <% if(!page.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-image:url(<%= page.thumbnail%>)" <% } %>>
+  <div class="post-page-title" <% if(!page.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-color:<%= theme.blendent.main %>;background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-color:<%= theme.blendent.main %>;background-image:url(<%= page.thumbnail%>)" <% } %>>
   <h2><%=page.title%></h2>
     <% if (page.date) { %>
   <p>作者:<%=config.author%> &nbsp&nbsp 发布于:<time datetime="<%=page.date.toJSON()%>">
@@ -13,7 +13,7 @@
   </div>
   <!--评论块-->
     <% if(theme.comment.use){%>
-  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="<%=theme.comment.shortname%>"><button style="margin: 0 auto; " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
+  <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="<%=theme.comment.shortname%>"><button style="margin: 0 auto;background-color:<%= theme.blendent.main %> " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
 
   <script>
 

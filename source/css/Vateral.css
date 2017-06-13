@@ -62,12 +62,12 @@ body{
     top: 0;
 }
 #nprogress .bar{
-    background-color: #26A69A;
+    background-color: #707070;
 }
 #nprogress .spinner-icon{
-    border-top-color:#26A69A;border-left-color:#26A69A;
+    border-top-color:#707070;
+    border-left-color:#707070;
 }
-
 /*导航按钮*/
 .nav-btn{
     width: 30px;
@@ -173,7 +173,6 @@ body{
 .nav-header{
     width: 100%;
     height:300px;
-    background-color: #b5b5b5;
     position: relative;
     background-size: cover;
     background-repeat:no-repeat;
@@ -404,7 +403,6 @@ p.no-result {
 }
 /*返回顶部按钮*/
 .up{
-    background-color: #26A69A;
     border-radius: 20px;
     width: 40px;
     height: 40px;
@@ -580,7 +578,6 @@ p.no-result {
 .post-header{
     width: 1050px;
     height: 400px;
-    background-color: #b5b5b5;
     display: block;
     margin: 0 auto;
     margin-top: 100px;
@@ -777,7 +774,6 @@ p.no-result {
 }
 #archive .tag-list .tag-list-item .tag-list-link{
     display: inline-block;
-
     color: #686868;
     padding: 20px;
     text-shadow: none;
@@ -800,7 +796,6 @@ p.no-result {
 .post-page-title{
     width: 100%;
     min-height: 300px;
-    background-color: #cacaca;
     position: relative;
     background-size: cover;
     background-repeat:no-repeat;
