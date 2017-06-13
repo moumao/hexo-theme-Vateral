@@ -1,22 +1,3 @@
-html{
-    font-family: sans-serif;
-    font-weight: 300;
-}
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/MaterialIcons-Regular.eot);
-    src: url(../fonts/MaterialIcons-Regular.woff2) format('woff2'),
-    url(../fonts/MaterialIcons-Regular.woff) format('woff'),
-    url(../fonts/MaterialIcons-Regular.ttf) format('truetype')
-}
-nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
-    display: block;
-    font-size: 30px;
-    height: 40px;
-    line-height: 40px;
-}
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -47,6 +28,12 @@ nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
     -khtml-user-select: none;
     -ms-user-select: none;
 }
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    display: block;
+    font-size: 30px;
+    height: 40px;
+    line-height: 40px;
+}
 body{
     margin: 0;
     padding: 0;
@@ -54,6 +41,11 @@ body{
     font-weight:300;
     overflow-x:hidden;
 }
+
+/*去除jquery默认样式*/
+.ui-loader-default{ display:none}
+.ui-mobile-viewport{ border:none;}
+.ui-page {padding: 0; margin: 0; outline: 0}
 .side-nav a{
     width: auto;
     height: auto;
@@ -416,10 +408,10 @@ p.no-result {
     border-radius: 20px;
     width: 40px;
     height: 40px;
-
     cursor: Pointer;
     box-shadow: 1px 1px 3px rgba(193, 193, 193, 0.89);
     display: none;
+
 }
 .upinbody{
     position: fixed;

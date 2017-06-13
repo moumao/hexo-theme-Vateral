@@ -1,35 +1,11 @@
-NProgress.start();
-NProgress.done();
-
-(function () {
-
-    window.onload=function () {
-        $(".progress").animate({
-            "opacity":0
-        })
-        $("body").css({
-            "overflow-x":"auto"
-        })
-    };
-    $(".post-fix").animate({
-        "opacity":0
-    },1000)
-    setTimeout(function () {
-        $(".progress").animate({
-            "opacity":0
-
-        })
-            .css({
-                "display":"none"
-            })
-    },1000)
-})();
-$(function(){
+//开启懒加载
+function lazy() {
     $(".lazy").lazyload({
         effect : "fadeIn"
     });
-});
+}
 
+//footer固定在底部
 function dowmdiv() {
     var contentHeight = document.body.scrollHeight,//网页正文全文高度
         winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
@@ -52,62 +28,94 @@ function dowmdiv() {
         });
     }
 }
+//post页面toc绑定事件
+function toc(){
+    $(".post-toc-btn").click(function () {
+        if($(".post-toc").exist()){
+            $(".post-toc-box").fadeToggle()
+        }else {
+            $(".post-toc-none").fadeToggle()
+        }
+    });
+    var $root = $('html, body');
+    $('.post-toc-link').click(function() {
+        $root.animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 500);
+        return false;
+    });
+}
+toc();
+//分享链接按钮绑定事件
+function links () {
+    var links=$(".post-author-link");
+    var button=$(".post-author-button");
+    button.click(function (){
+        if(links.css("display")=== "none"){
+            links.css({
+                "display":"block"
+            }).animate({
+                "right":"60px",
+                "opacity":1
+            },500)
+        }else {
+            links.animate({
+                "opacity":0
+            },500);
+            setTimeout(function (){
+                links.css({
+                    "display":"none",
+                    "right":"100px"
+                })
+            },500)
+        }
+    })
+}
 
-
+//up按钮
 (function () {
-    var weight=$("body").width();
-    if(weight<=768){
-        $(function () {
-            function friendsload() {
-                var times=0;
-                var left=(weight-250)/2+"px";
-
-                $(".friends-link").each(function () {
-                    var friend=$(this);
-                    var time=times*200;
-                    times++;
-                    setTimeout(function () {
-                        friend.animate({
-                            "margin-left":left,
-                            "opacity":1
-                        },300)
-                    },time);
-
-                });
+    $("#top-button").click(function () {
+        $('html,body').animate({
+            scrollTop:0
+        },500);
+    });
+    var up=$(".up");
+    window.onscroll = function () {
+        var top=$(window).scrollTop(),
+            height=$(window).height(),
+            botton =$(document).height() - top-height;
+        if (top>=height-400){
+            if (botton<=90){
+                up.removeClass("upinbody");
+                up.addClass("upinfoot");
+            }else {
+                up.removeClass("upinfoot");
+                up.addClass("upinbody");
             }
-            $(document).on('pjax:end', function() {
-                friendsload();
-            })
-            window.onload=friendsload();
-        });
-    }else {
-        $(function () {
-            function friendsload() {
-                var times=0;
-                $(".friends-link").each(function () {
-                    var friend=$(this);
-                    times++;
-                    var time=times*200;
-                    setTimeout(function () {
-                        friend.animate({
-                            "margin-left":"150px",
-                            "opacity":1
-                        },300)
-                    },time);
-
-                });
-            }
-            $(document).on('pjax:end', function() {
-                friendsload();
-            })
-            window.onload=friendsload();
-           /* $(".post-header").animate({
-                "margin-top":"100px"
-            },300)*/
-        });
+            up.fadeIn(100)
+        }else if (top<=height-400){
+            up.fadeOut(500);
+        }
     }
 })();
 
+//pjax操作
+(function($) {
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+    .on('pjax:end', function() {
+        dowmdiv();
+        lazy();
+        toc();
+        links();
+        //post页面返回按钮绑定pjax事件
+        $(".post-back").click(function () {
+            window.history.back();
+        });
+    });
+})(jQuery);
+
+//左侧菜单栏配置
 (function () {
     $('.button-collapse').sideNav({
             menuWidth: 250, // Default is 240
@@ -136,42 +144,59 @@ function dowmdiv() {
         })
 })();
 
-
-//回到顶部
+//友链界面载入动画
 (function () {
-        $("#top-button").click(function () {
-            $('html,body').animate({
-                scrollTop:0
-            },500);
-        });
+    var weight=$("body").width();
+    if(weight<=768){
+        $(function () {
+            function friendsload() {
+                var times=0;
+                var left=(weight-250)/2+"px";
 
-})();
+                $(".friends-link").each(function () {
+                    var friend=$(this);
+                    var time=times*200;
+                    times++;
+                    setTimeout(function () {
+                        friend.animate({
+                            "margin-left":left,
+                            "opacity":1
+                        },300)
+                    },time);
 
-//foot固定在底部
-(function(){
+                });
+            }
+            $(document).on('pjax:end', function() {
+                friendsload();
+            });
+            window.onload=friendsload();
+        });
+    }else {
+        $(function () {
+            function friendsload() {
+                var times=0;
+                $(".friends-link").each(function () {
+                    var friend=$(this);
+                    times++;
+                    var time=times*200;
+                    setTimeout(function () {
+                        friend.animate({
+                            "margin-left":"150px",
+                            "opacity":1
+                        },300)
+                    },time);
 
-    var contentHeight = document.body.scrollHeight,//网页正文全文高度
-        winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
-    if(!(contentHeight > winHeight)){
-        $(".up").css({
-            "display":"none"
-        });
-        //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
-        $("#bottom-outer").css({
-            "position":"absolute",
-            "bottom":0,
-            "left":0
-        });
-    } else {
-        $("#bottom-outer").css({
-            "position":"relative"
-        });
-        $("#top-button").css({
-            "display":"block"
+                });
+            }
+            $(document).on('pjax:end', function() {
+                friendsload();
+            });
+            window.onload=friendsload();
         });
     }
 })();
 
+//搜索栏算法
 var searchFunc = function(path, search_id, content_id) {
     'use strict';
     $.ajax({
@@ -280,95 +305,3 @@ $("#local-search-result").bind("DOMNodeRemoved DOMNodeInserted", function(e) {
         return false;
     };
 })(jQuery);
-
-(function () {
-    $(".post-toc-btn").click(function () {
-        if($(".post-toc").exist()){
-            $(".post-toc-box").fadeToggle()
-        }else {
-            $(".post-toc-none").fadeToggle()
-        }
-
-    })
-})();
-
-
-(function () {
-    var $root = $('html, body');
-    $('.post-toc-link').click(function() {
-        $root.animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top
-        }, 500);
-        return false;
-    });
-})();
-(function () {
-   var links=$(".post-author-link");
-   var button=$(".post-author-button");
-   button.click(function (){
-       if(links.css("display")=== "none"){
-           links.css({
-               "display":"block"
-           }).animate({
-               "right":"60px",
-               "opacity":1
-           },500)
-       }else {
-           links.animate({
-               "opacity":0
-           },500)
-           setTimeout(function (){
-
-               links.css({
-                   "display":"none",
-                   "right":"100px"
-               })
-           },500)
-       }
-   })
-})();
-
-//节流函数
-var throttle = function (fn, delay, atleast) {
-    var timer = null;
-    var previous = null;
-
-    return function () {
-        var now = +new Date();
-
-        if ( !previous ) previous = now;
-        if ( atleast && now - previous > atleast ) {
-            fn();
-            // 重置上一次开始时间为本次结束时间
-            previous = now;
-            clearTimeout(timer);
-        } else {
-            clearTimeout(timer);
-            timer = setTimeout(function() {
-                fn();
-                previous = null;
-            }, delay);
-        }
-    }
-};
-
-(function () {
-    var up=$(".up");
-    window.onscroll = function () {
-        var top=$(window).scrollTop(),
-            height=$(window).height(),
-            botton =$(document).height() - top-height;
-        if (top>=height-80){
-            if (botton<=90){
-                up.removeClass("upinbody");
-                up.addClass("upinfoot");
-            }else {
-                up.removeClass("upinfoot");
-                up.addClass("upinbody");
-            }
-            up.fadeIn(500);
-        }else if (top<=height-80){
-            up.fadeOut(500);
-        }
-    }
-})();
