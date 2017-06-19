@@ -98,23 +98,37 @@ function links () {
         }
     }
 })();
-
-//pjax操作
-(function($) {
-    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
-    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
-    .on('pjax:end', function() {
-        dowmdiv();
-        lazy();
-        toc();
-        links();
-        //post页面返回按钮绑定pjax事件
-        $(".post-back").click(function () {
-            window.history.back();
+//菜单图标改变
+function menu() {
+    var url = window.location.href;
+    var regex = /[-:\\/.][1-9][0-9][0-9][0-9][-:\\/.][0-9][0-9][-:\\/.][0-9][0-9][-:\\/.]/;
+    var menu = $(".nav-btn");//span图标
+    var menuButton = $("#menu");//按钮
+    var home=document.getElementById("menu").dataset.home;
+    if(regex.test(url)){//匹配为文章
+        menuButton.unbind();
+        menu.addClass("back");
+        menuButton.on("click",function(){
+            if (window.history.length===2){
+                window.location.href=home;
+            }else {
+                window.history.back();
+            }
         });
-    });
-})(jQuery);
-
+    }else {
+        menu.removeClass("back");
+        menuButton.unbind();
+        setTimeout(function(){
+            menuButton.sideNav({
+                    menuWidth: 250, // Default is 240
+                    edge: 'left', // Choose the horizontal origin
+                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    draggable: true // Choose whether you can drag to open on touch screens
+                }
+            );
+        })
+    }
+}
 //左侧菜单栏配置
 (function () {
     $('.button-collapse').sideNav({

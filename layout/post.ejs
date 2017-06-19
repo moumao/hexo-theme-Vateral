@@ -1,3 +1,4 @@
+
 <article id="post">
   <div class="post-page-title" <% if(!page.thumbnail) { %><%var a=parseInt(Math.random()*theme.thumbnail,10)+1%> style="background-color:<%= theme.blendent.main %>;background-image:url(/images/random/vateral-<%=a%>.png)" <% } else { %>style="background-color:<%= theme.blendent.main %>;background-image:url(<%= page.thumbnail%>)" <% } %>>
   <h2><%=page.title%></h2>
@@ -64,4 +65,7 @@
       list_number: true
     }) %>
 </div>
-<div class="post-back"><i class="material-icons">arrow_back</i></div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>

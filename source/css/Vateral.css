@@ -69,15 +69,87 @@ body{
     border-left-color:#707070;
 }
 /*导航按钮*/
-.nav-btn{
-    width: 30px;
-    height:30px;
-    display: block;
-    top: 30px;
+#menu-box{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: fixed;
     left: 30px;
-    z-index: 99;
-    position:fixed;
-    cursor: Pointer;
+    top:30px;
+    z-index: 999;
+}
+.menu{
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+
+}
+.nav-btn{
+    background-color: #707070;
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    line-height: 4px;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -1px;
+    margin-left: -9px;
+    transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -webkit-transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -moz-transition:transform  .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    border-radius: 3px;
+    cursor: pointer;
+
+}
+.nav-btn::before{
+    content:"";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: #707070;
+    line-height: 4px;
+    position: absolute;
+    left: 0;
+    top: -5px;
+    transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -webkit-transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -moz-transition:transform  .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.nav-btn::after{
+    content:"";
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background-color: #707070;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -webkit-transition: transform .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    -moz-transition:transform  .3s ease, left .3s ease, top .3s ease,bottom .3s ease,width .3s ease;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.back{
+    transform:rotate(180deg);
+}
+.back::after{
+    -webkit-transform: rotate(-45deg);
+    width: 13px;
+    left: 8px;
+    bottom: -4px;
+}
+.back::before{
+    -webkit-transform: rotate(45deg);
+    width: 13px;
+    left: 8px;
+    top: -4px;
 }
 /*导航*/
 .nav-list{
@@ -407,7 +479,6 @@ p.no-result {
     width: 40px;
     height: 40px;
     cursor: Pointer;
-    box-shadow: 1px 1px 3px rgba(193, 193, 193, 0.89);
     display: none;
 
 }
@@ -871,16 +942,17 @@ blockquote{
     padding-top: 3px;
 }
 .post-toc-btn{
-    width: 20px;
-    height: 20px;
-    margin: 5px;
+    width: 48px;
+    height: 48px;
     position: fixed;
     top: 30px;
     right: 30px;
     cursor: Pointer;
+
+    text-align: center;
 }
-.post-toc-btn img{
-    width: 100%;
+.post-toc-btn>i{
+    line-height: 48px;
 }
 .post-toc-none{
     display: none;
@@ -904,6 +976,7 @@ blockquote{
 .post-toc{
     display: inline-block;
     position: fixed;
+    max-width: 400px;
     top: 70px;
     right: 30px;
     list-style:none;

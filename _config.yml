@@ -81,19 +81,12 @@ comment:
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/materialize.min.css
-  #- /css/nprogress.min.css
-  #- /css/Vateral.css
   - /css/main.min.css
 
 # scripts loaded in the end of the body
 scripts:
   - /js/jquery-3.1.1.min.js
   - /js/materialize.min.js
-  #- /js/jquery.pjax.min.js
-  #- /js/nprogress.min.js
-  #- /js/lazyload.min.js
-  #- /js/jquery.rotate.min.js
-  #- /js/Vateral.min.js
   - /js/main.min.js
 
 
