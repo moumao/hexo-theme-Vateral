@@ -1,8 +1,6 @@
 //开启懒加载
 function lazy() {
-    $(".lazy").lazyload({
-        effect : "fadeIn"
-    });
+    $(".lazy").lazyload();
 }
 
 //footer固定在底部
@@ -109,8 +107,8 @@ function menu() {
         menuButton.unbind();
         menu.addClass("back");
         menuButton.on("click",function(){
-            if (window.history.length===2){
-                window.location.href=home;
+            if (window.history.length<=2){
+                return ;
             }else {
                 window.history.back();
             }
@@ -120,10 +118,10 @@ function menu() {
         menuButton.unbind();
         setTimeout(function(){
             menuButton.sideNav({
-                    menuWidth: 250, // Default is 240
-                    edge: 'left', // Choose the horizontal origin
-                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-                    draggable: true // Choose whether you can drag to open on touch screens
+                    menuWidth: 250,
+                    edge: 'left',
+                    closeOnClick: false,
+                    draggable: true
                 }
             );
         })
