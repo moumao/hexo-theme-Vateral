@@ -108,8 +108,9 @@ function menu() {
         menu.addClass("back");
         menuButton.on("click",function(){
             if (window.history.length<=2){
-                return ;
+                menuButton.attr("href","/")
             }else {
+                menuButton.attr("href","javascript:void(0)")
                 window.history.back();
             }
         });
