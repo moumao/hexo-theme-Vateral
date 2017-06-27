@@ -506,7 +506,7 @@ p.no-result {
 
 /*文章列表*/
 #recent-posts{
-    width: 1050px;
+    width: 900px;
     display: block;
     margin: 0 auto;
     position: relative;
@@ -647,8 +647,8 @@ p.no-result {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
 }
 .post-header{
-    width: 1050px;
-    height: 400px;
+    width: 900px;
+    height: 350px;
     display: block;
     margin: 0 auto;
     margin-top: 100px;
@@ -661,7 +661,7 @@ p.no-result {
     overflow: auto;
 }
 .post-author{
-    width: 1050px;
+    width: 900px;
     height: 60px;
     background-color: white;
     margin: 0 auto;
@@ -855,7 +855,7 @@ p.no-result {
 }
 /*文章*/
 #post{
-    width: 1050px;
+    width: 900px;
     display: block;
     margin: 0 auto;
     margin-top: 150px;
@@ -1004,7 +1004,7 @@ blockquote{
     max-width:100%;
 }
 .post-nav{
-    width: 1050px;
+    width: 900px;
     display: block;
     margin: 0 auto;
     background-color: #E9EBEC;
@@ -1060,7 +1060,7 @@ pre>code>span{
     margin-top: 100px;!important;
 }
 
-@media only screen and (max-width: 1092px){
+@media only screen and (max-width: 900px){
 
     #recent-posts{
         width: 96%;
