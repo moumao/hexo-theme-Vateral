@@ -142,7 +142,7 @@ up: true
 
 使用本地搜索需要在hexo目录安装 hexo-generator-search 插件。
 
-然后在 站点配置 文件中添加
+然后在_config.yml中添加
 ```
 search:
 	path: search.xml
@@ -174,14 +174,14 @@ comment:
 ### 代码高亮
 首先安装插件Hexo-Prism-Plugin
 ```npm i -S hexo-prism-plugin ```
-在hexo的d_config.yml文件中修改增加如下：
+在hexo的_config.yml文件中修改增加如下：
 ```
 prism_plugin:
   mode: 'preprocess'    # realtime：实时解析/preprocess：预处理
   theme: 'default'	# 高亮皮肤 默认为default 可选有default,coy,dark,funky,okaidia,solarizedlight,tomorrow,twiligh
   line_number: false    # default false 是否显示行数
  ```
- 要注意要修改配置文件中的默认配置highlight：
+ 要注意要在_config.yml中增加：
  ``` 
  highlight:
   enable: false
