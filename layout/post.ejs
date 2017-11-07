@@ -12,6 +12,23 @@
   <%-page.content%>
   </div>
   <!--评论块-->
+    <% if(theme.gitment_use){%>
+  <div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '<%=url%>',
+  owner: '<%=theme.gitment_owner%>',
+  repo: '<%=theme.gitment_repo%>',
+  oauth: {
+    client_id: '<%=theme.gitment_client_id%>',
+    client_secret: '<%=theme.gitment_client_secret%>',
+  },
+})
+gitment.render('container')
+</script>
+    <%}%>
     <% if(theme.comment.use){%>
   <div id="disqus_thread" style="padding:30px;text-align: center;border-top:1px solid silver " data-diaque="<%=theme.comment.shortname%>"><button style="margin: 0 auto; " class="btn" onclick="disqus()">加载评论(被墙则无法加载)</button></div>
 
