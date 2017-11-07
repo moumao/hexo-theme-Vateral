@@ -73,6 +73,12 @@ photo:
 comment:
     use: false
     shortname: XXX.disqus.com
+#gitment
+gitment_use: false
+gitment_owner:
+gitment_repo: ''
+gitment_client_id: ''
+gitment_client_secret: ''
 
 # stylesheets loaded in the <head>
 stylesheets:
