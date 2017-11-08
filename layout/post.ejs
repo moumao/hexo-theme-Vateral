@@ -13,10 +13,11 @@
   </div>
   <!--评论块-->
     <% if(theme.gitment_use){%>
-  <div id="container"></div>
+  <div id="container" style="padding:30px;text-align: center;border-top:1px solid silver "><button style="margin: 0 auto;background-color:<%= theme.blendent.main %> " class="btn" onclick="gitment()">加载评论</button></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
+function gitment() {
 var gitment = new Gitment({
   id: '<%=url%>',
   owner: '<%=theme.gitment_owner%>',
@@ -27,6 +28,7 @@ var gitment = new Gitment({
   },
 })
 gitment.render('container')
+}
 </script>
     <%}%>
     <% if(theme.comment.use){%>
